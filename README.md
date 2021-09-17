@@ -1,3 +1,3 @@
 # MyVehicleServiceApp
 Service repair accounting application for vehicles.<br>
-Stack: Cloud services, PostgreSQL, Java, Spring Framework, ReactJS
+<b>Stack:</b> Cloud services, PostgreSQL, Java, Spring Framework, ReactJS
