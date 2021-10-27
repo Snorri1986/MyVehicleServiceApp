@@ -5,3 +5,4 @@ Service repair accounting application for vehicles.<br>
 1. <i>Cloud side:</i> Database - PostgreSQL, API based on Spring Boot
 2. <i>Desktop client:</i> Web application based on ReactJS
 3. <i>Mobile client:</i> Android mobile application(Android 10 or above)
+<b>Change log:</b>
