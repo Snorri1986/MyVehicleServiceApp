@@ -6,3 +6,6 @@ Service repair accounting application for vehicles.<br>
 2. <i>Desktop client:</i> Web application based on ReactJS
 3. <i>Mobile client:</i> Android mobile application(Android 10 or above)<br>
 <b>Change log:</b>
+<b>v.0.0.2</b><br>
+1) Actuator: /health, /info<br>
+2) Ability to work with Apache Tomcat. Min version is <b>9.0.43</b>
