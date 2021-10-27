@@ -6,14 +6,16 @@
     <version>2.5.6</version>
   </parent>
   
-  <!-- need test -->
+ 
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
       <java.version>1.8</java.version>
       <start-class>main.WsMvsLoginApplication</start-class>
-   </properties>
-  <!--  -->
+      <pom-timestamp>${maven.build.timestamp}UTC</pom-timestamp>
+      <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
+  </properties>
+  
   
   <dependencies>
        <dependency>
@@ -21,26 +23,23 @@
            <artifactId>spring-boot-starter-web</artifactId>
        </dependency>
        
-       <!-- need test  -->
+       
        <dependency>
            <groupId>org.springframework.boot</groupId>
            <artifactId>spring-boot-starter-tomcat</artifactId>
-           <scope>provided</scope> <!-- need test  -->
+           <scope>provided</scope> 
        </dependency>
-       
+        
        <dependency>
            <groupId>org.springframework.boot</groupId>
            <artifactId>spring-boot-starter-actuator</artifactId>
        </dependency>
-       <!--  -->
        
-       
-       <!--  need test  -->
        <dependency>
           <groupId>org.apache.tomcat</groupId>
           <artifactId>tomcat-jdbc</artifactId>
        </dependency>
-       <!--  -->
+       
        
    </dependencies>
    
@@ -75,7 +74,7 @@
   
   <groupId>org.snorri1986</groupId>
   <artifactId>ws-mvs-login</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <packaging>war</packaging>
   <name>ws-mvs-login</name>
   <description>Login service for MyVehicleServiceApp</description>

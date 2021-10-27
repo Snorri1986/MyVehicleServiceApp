@@ -17,41 +17,30 @@ import org.springframework.context.annotation.Primary;
 @ComponentScan
 public class WsMvsLoginApplication extends SpringBootServletInitializer {
 
-	
-	// ready to commit
 	private static ApplicationContext context;
-	// ... //
-	
-	// ready to commit   
+
 	@Override
-	   protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-	      return application.sources(WsMvsLoginApplication.class);
-	   }
-	// ... //
-	
-	// ready to commit
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(WsMvsLoginApplication.class);
+	}
+
 	public static ApplicationContext getContext() {
 		return context;
 	}
-	// ... //
-	
+
 	public static void main(String[] args) {
-		
-		// ready to commit
 		ApplicationContext ctx = SpringApplication.run(WsMvsLoginApplication.class, args);
 		if (context == null) {
 			context = ctx;
 		}
-		// ... //
+
 	}
-	
-	// ready to commit
+
 	@Bean
 	@Primary
 	@ConfigurationProperties("spring.datasource.tomcat")
 	public PoolProperties getDataSourcePoolProperties() {
 		return new PoolProperties();
 	}
-	// ... //
-	
+
 }
