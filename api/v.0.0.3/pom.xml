@@ -60,6 +60,13 @@
        </dependency>
        <!--  -->
        
+       <!--  need test v0.0.3 -->
+       <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+       </dependency>
+       <!--  -->
+       
        
    </dependencies>
    
