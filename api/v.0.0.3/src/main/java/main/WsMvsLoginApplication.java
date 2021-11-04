@@ -25,8 +25,18 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	private static ApplicationContext context;
 
 	// ready to commit
-	@Value("${spring.datasource.url}")
-	String dbHerokuUrl;
+	@Value("${spring.datasource.uri}")
+	String dbHerokuUri;
+	// ... //
+
+	// ready to commit
+	@Value("${spring.datasource.username}")
+	String unHeroku;
+	// ... //
+
+	// ready to commit
+	@Value("${spring.datasource.password}")
+	String passHeroku;
 	// ... //
 
 	@Override
@@ -56,11 +66,11 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	// ready to commit //
 	@Bean
 	public BasicDataSource dataSource() throws URISyntaxException {
-		URI dbUri = new URI(dbHerokuUrl);
+		URI dbUri = new URI(dbHerokuUri);
 
-		String username = dbUri.getUserInfo().split(":")[0];
-		String password = dbUri.getUserInfo().split(":")[1];
-		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
+		String username = unHeroku; // ready to commit
+		String password = passHeroku; // ready to commit
+		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath(); // need test
 
 		BasicDataSource basicDataSource = new BasicDataSource();
 		basicDataSource.setUrl(dbUrl);
