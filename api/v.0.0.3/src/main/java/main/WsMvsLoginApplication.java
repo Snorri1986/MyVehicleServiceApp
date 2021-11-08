@@ -20,34 +20,73 @@ import org.springframework.context.annotation.Primary;
 @SpringBootApplication
 @Configuration
 @ComponentScan
+/**
+ * Description: The main class
+ *
+ * @author Denys Shabelnyk
+ * @since 0.0.1
+ */
 public class WsMvsLoginApplication extends SpringBootServletInitializer {
 
 	private static ApplicationContext context;
 
-	// ready to commit
 	@Value("${spring.datasource.uri}")
 	String dbHerokuUri;
-	// ... //
 
-	// ready to commit
 	@Value("${spring.datasource.username}")
 	String unHeroku;
-	// ... //
 
-	// ready to commit
 	@Value("${spring.datasource.password}")
 	String passHeroku;
-	// ... //
+
+	/**
+	 * Description: Getter for username to Heroku Cloud
+	 *
+	 * @since 0.0.3
+	 * @return String with username
+	 */
+	public String getUnHeroku() {
+		return unHeroku;
+	}
+
+	/**
+	 * Description: Getter for password to Heroku Cloud
+	 *
+	 * @since 0.0.3
+	 * @return String with password
+	 */
+	public String getPassHeroku() {
+		return passHeroku;
+	}
 
 	@Override
+	/**
+	 * Description: core method for Spring Boot and Apache tomact
+	 *
+	 * @since 0.0.2
+	 * @param application Another SpringApplicationBuilder instance
+	 * @return SpringApplicationBuilder Builder for application
+	 */
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(WsMvsLoginApplication.class);
 	}
 
+	/**
+	 * Description: core method. Returs Application Context
+	 *
+	 * @since 0.0.1
+	 * @return ApplicationContext instance
+	 */
 	public static ApplicationContext getContext() {
 		return context;
 	}
 
+	/**
+	 * Description: main method.Entry point
+	 *
+	 * @param args - command line arguments. Input for application
+	 * @since 0.0.1
+	 */
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(WsMvsLoginApplication.class, args);
 		if (context == null) {
@@ -59,18 +98,30 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	@Bean
 	@Primary
 	@ConfigurationProperties("spring.datasource.tomcat")
+	/**
+	 * Description: Bean.DataSource pool connections
+	 *
+	 * @since 0.0.2
+	 * @return PoolProperties instance
+	 */
 	public PoolProperties getDataSourcePoolProperties() {
 		return new PoolProperties();
 	}
 
-	// ready to commit //
 	@Bean
+	/**
+	 * Description: Bean. DataSource PostgreSQL
+	 *
+	 * @since 0.0.3
+	 * @return BasicDataSource instance
+	 * @throws URISyntaxException - connection string
+	 */
 	public BasicDataSource dataSource() throws URISyntaxException {
 		URI dbUri = new URI(dbHerokuUri);
 
-		String username = unHeroku; // ready to commit
-		String password = passHeroku; // ready to commit
-		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath(); // need test
+		String username = unHeroku;
+		String password = passHeroku;
+		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
 
 		BasicDataSource basicDataSource = new BasicDataSource();
 		basicDataSource.setUrl(dbUrl);
@@ -79,6 +130,5 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 
 		return basicDataSource;
 	}
-	// ... //
 
 }
