@@ -8,7 +8,7 @@ Service repair accounting application for vehicles.<br>
 # Change log:
 <b>v.0.0.2</b><br>
 1) Actuator: /health, /info<br>
-2) Ability to work with Apache Tomcat. Min version is <b>9.0.43</b>
+2) Ability to work with Apache Tomcat. Min version is <b>9.0.43</b><br>
 <b>v.0.3</b><br>
 1) Connection with remote database on Heroku;
 2) Added JUnit tests.
