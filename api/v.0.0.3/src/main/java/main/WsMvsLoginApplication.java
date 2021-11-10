@@ -42,7 +42,7 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	/**
 	 * Description: Getter for username to Heroku Cloud
 	 *
-	 * @since 0.0.3
+	 * @since 0.3
 	 * @return String with username
 	 */
 	public String getUnHeroku() {
@@ -52,7 +52,7 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	/**
 	 * Description: Getter for password to Heroku Cloud
 	 *
-	 * @since 0.0.3
+	 * @since 0.3
 	 * @return String with password
 	 */
 	public String getPassHeroku() {
@@ -112,7 +112,7 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	/**
 	 * Description: Bean. DataSource PostgreSQL
 	 *
-	 * @since 0.0.3
+	 * @since 0.3
 	 * @return BasicDataSource instance
 	 * @throws URISyntaxException - connection string
 	 */

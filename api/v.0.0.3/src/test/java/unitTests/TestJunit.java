@@ -15,7 +15,7 @@ import main.WsMvsLoginApplication;
  * Description: The main test class. Container
  *
  * @author Denys Shabelnyk
- * @since 0.0.3
+ * @since 0.3
  */
 public class TestJunit {
 
@@ -23,7 +23,7 @@ public class TestJunit {
 	/**
 	 * Description: method which check JUnit health
 	 *
-	 * @since 0.0.3
+	 * @since 0.3
 	 */
 	public void checkTestCases() {
 		String str = "First try";
@@ -34,7 +34,7 @@ public class TestJunit {
 	/**
 	 * Description: checking database connection before make war build.
 	 *
-	 * @since 0.0.3
+	 * @since 0.3
 	 */
 	public void checkDbConnection() {
 

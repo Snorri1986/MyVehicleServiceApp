@@ -124,7 +124,7 @@
   
   <groupId>org.snorri1986</groupId>
   <artifactId>ws-mvs-login</artifactId>
-  <version>0.0.3</version>
+  <version>1.0</version>
   <packaging>war</packaging>
   <name>ws-mvs-login</name>
   <description>Login service for MyVehicleServiceApp</description>
