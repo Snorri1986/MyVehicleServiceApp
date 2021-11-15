@@ -1,5 +1,5 @@
 CREATE TABLE auth.subscribers (
-	id bigint NOT NULL GENERATED ALWAYS AS IDENTITY,
+	id bigint NOT NULL,
 	login varchar NOT NULL,
 	"password" varchar NOT NULL,
 	firstname varchar NULL,
