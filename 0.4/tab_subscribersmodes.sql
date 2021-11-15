@@ -1,5 +1,5 @@
 CREATE TABLE auth.subscribersmodes (
-	id bigint NOT NULL GENERATED ALWAYS AS IDENTITY,
+	id bigint NOT NULL,
 	subid bigint NOT NULL,
 	login int8 NULL DEFAULT 0,
 	"password" int8 NULL DEFAULT 0,
