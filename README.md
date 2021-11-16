@@ -11,4 +11,6 @@ Service repair accounting application for vehicles.<br>
 2) Ability to work with Apache Tomcat. Min version is <b>9.0.43</b><br>
 <b>v.0.3</b><br>
 1) Connection with remote database on Heroku;
-2) Added JUnit tests.
+2) Added JUnit tests.</b><br>
+<b>v.0.4</b><br>
+1) created db objects for register process.
