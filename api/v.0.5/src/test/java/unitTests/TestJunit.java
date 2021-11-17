@@ -19,23 +19,23 @@ import main.WsMvsLoginApplication;
  */
 public class TestJunit {
 
-	@Test
 	/**
 	 * Description: method which check JUnit health
 	 *
 	 * @since 0.3
 	 */
+	@Test
 	public void checkTestCases() {
 		String str = "First try";
 		assertEquals("First try", str);
 	}
 
-	@Test
 	/**
 	 * Description: checking database connection before make war build.
 	 *
 	 * @since 0.3
 	 */
+	@Test
 	public void checkDbConnection() {
 
 		WsMvsLoginApplication wsmvsloginapp = new WsMvsLoginApplication();
@@ -63,5 +63,4 @@ public class TestJunit {
 		assertNotNull(basicDataSource);
 
 	}
-
 }
