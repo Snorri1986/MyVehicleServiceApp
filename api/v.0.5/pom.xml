@@ -89,22 +89,6 @@
              <scope>test</scope>
        </dependency>
        
-       <!-- need test v.0.5 -->
-       <dependency>
-             <groupId>org.springframework</groupId>
-             <artifactId>spring-webmvc</artifactId>
-       </dependency>
-       <!--  -->
-       
-       <!--  need test v.0.5 -->
-       <dependency>
-             <groupId>org.springframework.boot</groupId>
-             <artifactId>spring-boot-devtools</artifactId>
-       </dependency>
-       <!--  -->
-       
-       
-       
    </dependencies>
    
    <!-- Maven plug-in -->

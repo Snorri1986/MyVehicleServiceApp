@@ -6,6 +6,7 @@ import java.net.URISyntaxException;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.tomcat.jdbc.pool.PoolProperties;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -17,6 +18,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+import repository.DataBaseBridge;
 
 @SpringBootApplication
 @Configuration
@@ -139,14 +142,42 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	/*
 	 * @Bean public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 	 * return args -> {
-	 * 
+	 *
 	 * System.out.println("Let's inspect the beans provided by Spring Boot:");
-	 * 
+	 *
 	 * String[] beanNames = ctx.getBeanDefinitionNames(); Arrays.sort(beanNames);
 	 * for (String beanName : beanNames) { System.out.println(beanName); }
-	 * 
+	 *
 	 * }; }
 	 */
 	// ... //
 
+	// test code
+	@Bean
+	public DataBaseBridge dataBaseBridge() {
+		return new DataBaseBridge();
+	}
+	// ... //
+
+	// test code
+	// @Autowired
+	// DataBaseBridge db;
+	// ... //
+
+	// test code
+	@Bean
+	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+		return args -> {
+			Integer returnResult;
+			String un = "TestUser";
+			String up = "TestPassword";
+			String fn = "FirstName";
+			String ln = "LastName";
+
+			returnResult = dataBaseBridge().setNewUser(un, up, fn, ln);
+			System.out.println("Result is: " + returnResult);
+
+		};
+	}
+	// ... //
 }

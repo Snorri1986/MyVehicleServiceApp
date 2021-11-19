@@ -6,15 +6,13 @@ import javax.persistence.ParameterMode;
 import javax.persistence.StoredProcedureQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class DataBaseBridge {
 
-	@Lazy
 	@Autowired
-	EntityManager entityManager;
+	EntityManager entityManager; // need test
 
 	// need test v.0.5
 	public Integer setNewUser(String username, String password, String firstname, String lastname) {
