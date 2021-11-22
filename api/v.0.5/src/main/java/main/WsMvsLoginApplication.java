@@ -2,13 +2,17 @@ package main;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Properties;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.tomcat.jdbc.pool.PoolProperties;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -18,6 +22,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import repository.DataBaseBridge;
 
@@ -26,6 +32,8 @@ import repository.DataBaseBridge;
 @ComponentScan
 // need test v.0.5
 @EnableJpaRepositories(basePackages = "repository")
+@EnableAutoConfiguration(exclude = { HibernateJpaAutoConfiguration.class,
+		DataSourceTransactionManagerAutoConfiguration.class })
 // ... //
 /**
  * Description: The main class
@@ -45,6 +53,11 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 
 	@Value("${spring.datasource.password}")
 	String passHeroku;
+
+	// test code
+	// @Autowired
+	// DataBaseBridge db;
+	// ... //
 
 	/**
 	 * Description: Getter for username to Heroku Cloud
@@ -157,6 +170,7 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	public DataBaseBridge dataBaseBridge() {
 		return new DataBaseBridge();
 	}
+
 	// ... //
 
 	// test code
@@ -174,10 +188,46 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 			String fn = "FirstName";
 			String ln = "LastName";
 
-			returnResult = dataBaseBridge().setNewUser(un, up, fn, ln);
+			// returnResult = dataBaseBridge().setNewUser(un, up, fn, ln);
+			// test code
+			returnResult = dataBaseBridge().setNewUser(fn, ln, un, up);
+			// ... //
 			System.out.println("Result is: " + returnResult);
 
 		};
+	}
+	// ... //
+
+	// need test task 3.1, 3.2
+	@Bean
+	@Primary
+	@ConfigurationProperties("spring.jpa")
+	public Properties getJpaProperties() {
+		return new Properties();
+	}
+	// ... //
+
+	// need test task 3.1, 3.2
+	@Bean
+	LocalContainerEntityManagerFactoryBean entityManagerFactory() throws ClassNotFoundException {
+		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+		Properties jpaProperties = getJpaProperties();
+		vendorAdapter.setGenerateDdl(false);
+		final boolean showsql = Boolean.parseBoolean(jpaProperties.getProperty("show-sql", "false"));
+		vendorAdapter.setShowSql(showsql);
+
+		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
+		try {
+			factoryBean.setDataSource(dataSource());
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		factoryBean.setJpaVendorAdapter(vendorAdapter);
+		factoryBean.setPackagesToScan("repository");
+		factoryBean.setJpaProperties(jpaProperties);
+
+		return factoryBean;
 	}
 	// ... //
 }

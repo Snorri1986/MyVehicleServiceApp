@@ -23,8 +23,8 @@ public class DataBaseBridge {
 				.registerStoredProcedureParameter("i_login", String.class, ParameterMode.IN)
 				.registerStoredProcedureParameter("i_password", String.class, ParameterMode.IN)
 				.registerStoredProcedureParameter("v_result", Integer.class, ParameterMode.OUT)
-				.setParameter(1, username).setParameter(2, password).setParameter(3, firstname)
-				.setParameter(4, lastname);
+				.setParameter(1, firstname).setParameter(2, lastname).setParameter(3, username)
+				.setParameter(4, password);
 		query.execute();
 		answerCode = (Integer) query.getOutputParameterValue("v_result");
 		return answerCode;
