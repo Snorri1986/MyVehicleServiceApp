@@ -7,7 +7,6 @@ import java.util.Properties;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.tomcat.jdbc.pool.PoolProperties;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,12 +24,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
-import repository.DataBaseBridge;
-
 @SpringBootApplication
 @Configuration
 @ComponentScan
-// need test v.0.5
+// ready to commit v.0.5
 @EnableJpaRepositories(basePackages = "repository")
 @EnableAutoConfiguration(exclude = { HibernateJpaAutoConfiguration.class,
 		DataSourceTransactionManagerAutoConfiguration.class })
@@ -53,11 +50,6 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 
 	@Value("${spring.datasource.password}")
 	String passHeroku;
-
-	// test code
-	// @Autowired
-	// DataBaseBridge db;
-	// ... //
 
 	/**
 	 * Description: Getter for username to Heroku Cloud
@@ -166,39 +158,33 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	// ... //
 
 	// test code
-	@Bean
-	public DataBaseBridge dataBaseBridge() {
-		return new DataBaseBridge();
-	}
-
+	/*
+	 * @Bean public DataBaseBridge dataBaseBridge() { return new DataBaseBridge(); }
+	 */
 	// ... //
 
 	// test code
-	// @Autowired
-	// DataBaseBridge db;
+	/*
+	 * @Bean public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+	 * return args -> { Integer returnResult; String un = "TestUser"; String up =
+	 * "TestPassword"; String fn = "FirstName"; String ln = "LastName";
+	 *
+	 * // returnResult = dataBaseBridge().setNewUser(un, up, fn, ln); // test code
+	 * returnResult = dataBaseBridge().setNewUser(fn, ln, un, up); // ... //
+	 * System.out.println("Result is: " + returnResult);
+	 *
+	 * }; }
+	 */
 	// ... //
 
-	// test code
-	@Bean
-	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-		return args -> {
-			Integer returnResult;
-			String un = "TestUser";
-			String up = "TestPassword";
-			String fn = "FirstName";
-			String ln = "LastName";
-
-			// returnResult = dataBaseBridge().setNewUser(un, up, fn, ln);
-			// test code
-			returnResult = dataBaseBridge().setNewUser(fn, ln, un, up);
-			// ... //
-			System.out.println("Result is: " + returnResult);
-
-		};
-	}
-	// ... //
-
-	// need test task 3.1, 3.2
+	// ready to commit
+	/**
+	 * Description: getter method of JPA properties(Bean)
+	 *
+	 * @author Denys Shabelnyk
+	 * @since 0.5
+	 * @return Properties - return current JPA properties
+	 */
 	@Bean
 	@Primary
 	@ConfigurationProperties("spring.jpa")
@@ -207,7 +193,14 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	}
 	// ... //
 
-	// need test task 3.1, 3.2
+	// ready to commit
+	/**
+	 * Description: factory to EntityManager
+	 *
+	 * @author Denys Shabelnyk
+	 * @since 0.5
+	 * @return LocalContainerEntityManagerFactoryBean - return current instance
+	 */
 	@Bean
 	LocalContainerEntityManagerFactoryBean entityManagerFactory() throws ClassNotFoundException {
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
