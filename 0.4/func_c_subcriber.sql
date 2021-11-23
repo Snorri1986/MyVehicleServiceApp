@@ -7,14 +7,14 @@ v_result int4;
 v_count int4;
 begin
 	-- return values: 0 - success, -1 - error
-	insert into subscribers(id,login,password,firstname,lastname,lastlogindate)
-		values (nextval('seq_subscribers_id'),i_login,i_password,i_name,i_surname,current_timestamp);
+	insert into auth.subscribers(id,login,password,firstname,lastname,lastlogindate)
+		values (nextval('auth.seq_subscribers_id'),i_login,i_password,i_name,i_surname,current_timestamp);
     --commit;
 	
    -- check wheater of registrarion --
    select count(*) 
 	   into v_count
-	from subscribers s
+	from auth.subscribers s
 	where s.login = i_login;
 
   if v_count > 0 then 
