@@ -24,14 +24,16 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
+import controllers.UserRegistrationController;
+import repository.DataBaseBridge;
+
 @SpringBootApplication
 @Configuration
-@ComponentScan
-// ready to commit v.0.5
+@ComponentScan(basePackageClasses = { UserRegistrationController.class, DataBaseBridge.class })
 @EnableJpaRepositories(basePackages = "repository")
 @EnableAutoConfiguration(exclude = { HibernateJpaAutoConfiguration.class,
 		DataSourceTransactionManagerAutoConfiguration.class })
-// ... //
+
 /**
  * Description: The main class
  *
@@ -177,7 +179,6 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	 */
 	// ... //
 
-	// ready to commit
 	/**
 	 * Description: getter method of JPA properties(Bean)
 	 *
@@ -191,9 +192,7 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	public Properties getJpaProperties() {
 		return new Properties();
 	}
-	// ... //
 
-	// ready to commit
 	/**
 	 * Description: factory to EntityManager
 	 *
@@ -222,5 +221,5 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 
 		return factoryBean;
 	}
-	// ... //
+
 }

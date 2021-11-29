@@ -1,4 +1,4 @@
-// need test v0.5
+
 package models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -36,7 +36,6 @@ public class RegisterResponseModel {
 	 * Description: setter for local variable "code"
 	 *
 	 * @author Denys Shabelnyk
-	 * @return Integer value of answer code
 	 * @since 0.5
 	 */
 	public void setCode(Integer code) {
@@ -54,4 +53,3 @@ public class RegisterResponseModel {
 		return "RegisterResponseModel [code=" + code + "]";
 	}
 }
-// ... //

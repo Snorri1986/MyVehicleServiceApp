@@ -1,4 +1,4 @@
-// ready to commit v.0.5
+
 package repository;
 
 import javax.persistence.EntityManager;
@@ -18,9 +18,8 @@ import org.springframework.stereotype.Repository;
 public class DataBaseBridge {
 
 	@Autowired
-	EntityManager entityManager; // ready to commit
+	EntityManager entityManager;
 
-	// ready to commit v.0.5
 	/**
 	 * Description: method for adding new user
 	 *
@@ -46,7 +45,5 @@ public class DataBaseBridge {
 		answerCode = (Integer) query.getOutputParameterValue("v_result");
 		return answerCode;
 	}
-	// ... //
 
 }
-// ... //

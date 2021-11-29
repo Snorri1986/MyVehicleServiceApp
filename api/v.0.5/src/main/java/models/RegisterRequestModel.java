@@ -1,4 +1,4 @@
-// need test v0.5
+
 package models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -66,7 +66,7 @@ public class RegisterRequestModel {
 	 * Description: password setter
 	 *
 	 * @author Denys Shabelnyk
-	 * @param String value of password
+	 * @param password value of password
 	 * @since 0.5
 	 */
 	public void setPassword(String password) {
@@ -89,7 +89,7 @@ public class RegisterRequestModel {
 	 * Description: first name of user setter
 	 *
 	 * @author Denys Shabelnyk
-	 * @param String value of first name
+	 * @param firstname value of first name
 	 * @since 0.5
 	 */
 	public void setFirstname(String firstname) {
@@ -112,7 +112,7 @@ public class RegisterRequestModel {
 	 * Description: last name of user setter
 	 *
 	 * @author Denys Shabelnyk
-	 * @param String value of last name
+	 * @param lastname value of last name
 	 * @since 0.5
 	 */
 	public void setLastname(String lastname) {
@@ -131,4 +131,3 @@ public class RegisterRequestModel {
 				+ ", lastname=" + lastname + "]";
 	}
 }
-// ... //
