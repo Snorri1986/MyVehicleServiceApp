@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"repository","l":"DataBaseBridge"},{"p":"models","l":"RegisterRequestModel"},{"p":"models","l":"RegisterResponseModel"},{"p":"controllers","l":"UserRegistrationController"},{"p":"main","l":"WsMvsLoginApplication"}];updateSearchResults();
