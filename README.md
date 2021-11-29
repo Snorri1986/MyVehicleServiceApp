@@ -13,4 +13,7 @@ Service repair accounting application for vehicles.<br>
 1) Connection with remote database on Heroku;
 2) Added JUnit tests.</b><br>
 <b>v.0.4</b><br>
-1) created db objects for register process.
+1) created db objects for register process.<br>
+<b>v.0.5</b><br>
+1) created all classes and methods for register process;
+2) added web-service documentation in JavaDoc format started from v0.5
