@@ -1,4 +1,3 @@
-
 package repository;
 
 import javax.persistence.EntityManager;
@@ -46,7 +45,15 @@ public class DataBaseBridge {
 		return answerCode;
 	}
 
-	// need test task 4.1
+	/**
+	 * Description: method for handling user authorization
+	 *
+	 * @author Denys Shabelnyk
+	 * @since 0.6
+	 * @param username - login of user
+	 * @param password - password of user
+	 * @return Integer - result code. 0 - success, -1 - fail
+	 */
 	public Integer checkUserAuth(String username, String password) {
 		Integer answerCode = 0;
 		StoredProcedureQuery query = entityManager.createStoredProcedureQuery("auth.c_auth_subcriber")
@@ -58,7 +65,5 @@ public class DataBaseBridge {
 		answerCode = (Integer) query.getOutputParameterValue("v_result");
 		return answerCode;
 	}
-
-	// ... //
 
 }

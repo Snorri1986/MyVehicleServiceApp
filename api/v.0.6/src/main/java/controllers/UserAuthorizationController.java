@@ -1,4 +1,3 @@
-// need test task 4
 package controllers;
 
 import javax.validation.Valid;
@@ -17,12 +16,32 @@ import models.LoginRequestModel;
 import models.LoginResponseModel;
 import repository.DataBaseBridge;
 
+/**
+ * Description: The controller class for login proccess Request example: {
+ * "login":"kabanchik","password":"chry123" } Response example: { "code": 0 } or
+ * { "code": -1 }
+ *
+ * @author Denys Shabelnyk
+ * @since 0.6
+ */
 @RestController
 public class UserAuthorizationController {
 
 	@Autowired
 	DataBaseBridge dbBridge;
 
+	/**
+	 * Description: method for handling authorization requests
+	 *
+	 * @author Denys Shabelnyk
+	 * @param loginRequestModel - a request which written by JSON and send from
+	 *                          outside form
+	 * @return LoginResponseModel - a response which returns from database. Can be
+	 *         only 0 - success, -1 - failure.
+	 * @throws JsonMappingException    - error while field mappings
+	 * @throws JsonProcessingException - error while JSON parsing
+	 * @since 0.6
+	 */
 	@PostMapping("/login")
 	public @ResponseBody LoginResponseModel authUser(@RequestBody @Valid final LoginRequestModel loginRequestModel)
 			throws JsonMappingException, JsonProcessingException {
@@ -40,4 +59,3 @@ public class UserAuthorizationController {
 	}
 
 }
-// ... //

@@ -30,7 +30,10 @@ import repository.DataBaseBridge;
 @SpringBootApplication
 @Configuration
 @ComponentScan(basePackageClasses = { UserRegistrationController.class, DataBaseBridge.class })
-@EnableJpaRepositories(basePackages = "repository")
+//@EnableJpaRepositories(basePackages = "repository")
+// need test task 5.2 and 5.3
+@EnableJpaRepositories(basePackages = { "repository", "unitTests" })
+// ... //
 @EnableAutoConfiguration(exclude = { HibernateJpaAutoConfiguration.class,
 		DataSourceTransactionManagerAutoConfiguration.class })
 
@@ -160,9 +163,11 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	// ... //
 
 	// test code
-	/*
-	 * @Bean public DataBaseBridge dataBaseBridge() { return new DataBaseBridge(); }
-	 */
+	@Bean
+	public static DataBaseBridge dataBaseBridge() {
+		return new DataBaseBridge();
+	}
+
 	// ... //
 
 	// test code

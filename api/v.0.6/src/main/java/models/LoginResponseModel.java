@@ -1,4 +1,3 @@
-// need test task 2
 package models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -48,4 +47,3 @@ public class LoginResponseModel {
 	}
 
 }
-// ... //
