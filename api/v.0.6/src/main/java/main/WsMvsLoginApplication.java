@@ -30,10 +30,7 @@ import repository.DataBaseBridge;
 @SpringBootApplication
 @Configuration
 @ComponentScan(basePackageClasses = { UserRegistrationController.class, DataBaseBridge.class })
-//@EnableJpaRepositories(basePackages = "repository")
-// need test task 5.2 and 5.3
-@EnableJpaRepositories(basePackages = { "repository", "unitTests" })
-// ... //
+@EnableJpaRepositories(basePackages = "repository")
 @EnableAutoConfiguration(exclude = { HibernateJpaAutoConfiguration.class,
 		DataSourceTransactionManagerAutoConfiguration.class })
 
@@ -147,42 +144,6 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 
 		return basicDataSource;
 	}
-
-	// test code
-	/*
-	 * @Bean public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-	 * return args -> {
-	 *
-	 * System.out.println("Let's inspect the beans provided by Spring Boot:");
-	 *
-	 * String[] beanNames = ctx.getBeanDefinitionNames(); Arrays.sort(beanNames);
-	 * for (String beanName : beanNames) { System.out.println(beanName); }
-	 *
-	 * }; }
-	 */
-	// ... //
-
-	// test code
-	@Bean
-	public static DataBaseBridge dataBaseBridge() {
-		return new DataBaseBridge();
-	}
-
-	// ... //
-
-	// test code
-	/*
-	 * @Bean public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-	 * return args -> { Integer returnResult; String un = "TestUser"; String up =
-	 * "TestPassword"; String fn = "FirstName"; String ln = "LastName";
-	 *
-	 * // returnResult = dataBaseBridge().setNewUser(un, up, fn, ln); // test code
-	 * returnResult = dataBaseBridge().setNewUser(fn, ln, un, up); // ... //
-	 * System.out.println("Result is: " + returnResult);
-	 *
-	 * }; }
-	 */
-	// ... //
 
 	/**
 	 * Description: getter method of JPA properties(Bean)

@@ -50,8 +50,8 @@ public class UserRegistrationController {
 		RegisterResponseModel registerResponseModel = null;
 		Integer result = 0;
 
-		result = dbBridge.setNewUser(registerRequestModel.getFirstname(), registerRequestModel.getLastname(),
-				registerRequestModel.getUsername(), registerRequestModel.getPassword());
+		result = dbBridge.setNewUser(registerRequestModel.getUsername(), registerRequestModel.getPassword(),
+				registerRequestModel.getFirstname(), registerRequestModel.getLastname());
 
 		String resultInString = String.valueOf(result);
 
