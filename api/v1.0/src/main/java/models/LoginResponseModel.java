@@ -28,6 +28,7 @@ public class LoginResponseModel {
 	/**
 	 * Description: setter for local variable "code"
 	 *
+	 * @param code - Integer value of response code
 	 * @author Denys Shabelnyk
 	 * @since 0.6
 	 */

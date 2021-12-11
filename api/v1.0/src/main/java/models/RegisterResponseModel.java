@@ -35,6 +35,7 @@ public class RegisterResponseModel {
 	/**
 	 * Description: setter for local variable "code"
 	 *
+	 * @param code - Integer value of code
 	 * @author Denys Shabelnyk
 	 * @since 0.5
 	 */

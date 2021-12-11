@@ -27,19 +27,18 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import controllers.UserRegistrationController;
 import repository.DataBaseBridge;
 
+/**
+ * Description: The main class. Extends SpringBootServletInitializer
+ *
+ * @author Denys Shabelnyk
+ * @since 0.0.1
+ */
 @SpringBootApplication
 @Configuration
 @ComponentScan(basePackageClasses = { UserRegistrationController.class, DataBaseBridge.class })
 @EnableJpaRepositories(basePackages = "repository")
 @EnableAutoConfiguration(exclude = { HibernateJpaAutoConfiguration.class,
 		DataSourceTransactionManagerAutoConfiguration.class })
-
-/**
- * Description: The main class
- *
- * @author Denys Shabelnyk
- * @since 0.0.1
- */
 public class WsMvsLoginApplication extends SpringBootServletInitializer {
 
 	private static ApplicationContext context;
@@ -135,6 +134,7 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 
 		String username = unHeroku;
 		String password = passHeroku;
+
 		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
 
 		BasicDataSource basicDataSource = new BasicDataSource();
@@ -165,6 +165,7 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 	 * @author Denys Shabelnyk
 	 * @since 0.5
 	 * @return LocalContainerEntityManagerFactoryBean - return current instance
+	 * @throws ClassNotFoundException - if a class didn't find
 	 */
 	@Bean
 	LocalContainerEntityManagerFactoryBean entityManagerFactory() throws ClassNotFoundException {

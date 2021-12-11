@@ -20,4 +20,5 @@ public class Utils {
 	public static String getBase64HashPhrase(String valueToEncoded) {
 		return Base64.getEncoder().encodeToString(valueToEncoded.getBytes());
 	}
+
 }
