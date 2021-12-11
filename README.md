@@ -18,4 +18,7 @@ Service repair accounting application for vehicles.<br>
 1) created all classes and methods for register process;
 2) added web-service documentation in JavaDoc format started from v0.5<br>
 <b>v.0.5.1</b><br>
-1) improved registration. Duplicate logins - not allowed.
+1) improved registration. Duplicate logins - not allowed.<br>
+<b>v1.0</b><br>
+Added encryption for subscriber's credentials.
+API for login and register process ready to use in production.
