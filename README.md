@@ -1,9 +1,9 @@
 # MyVehicleServiceApp
 Service repair accounting application for vehicles.<br>
-<b>Stack:</b> Cloud services, PostgreSQL, Java for Android mobile devices, Spring Framework,HTML5,CSS,JavaScript<br>
+<b>Stack:</b> Cloud services, PostgreSQL, Kotlin, Spring Boot,Spring MVC<br>
 <b>Software architecture:</b>
 1. <i>Cloud side:</i> Database - PostgreSQL, API based on Spring Boot
-2. <i>Desktop client:</i> Web application.
+2. <i>Desktop client:</i> Web application based on Spring MVC.
 3. <i>Mobile client:</i> Android mobile application(Android 10 or above)<br>
 # Change log:
 <b>v.0.0.2</b><br>
