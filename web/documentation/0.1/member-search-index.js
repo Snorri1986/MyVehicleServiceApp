@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"snorri1986.main","c":"MainPageController","l":"MainPageController()","u":"%3Cinit%3E()"},{"p":"snorri1986.main","c":"MainPageController","l":"printGreatings(ModelMap)","u":"printGreatings(org.springframework.ui.ModelMap)"}];updateSearchResults();
