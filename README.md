@@ -6,6 +6,7 @@ Service repair accounting application for vehicles.<br>
 2. <i>Desktop client:</i> Web application based on Spring MVC.
 3. <i>Mobile client:</i> Android mobile application(Android 10 or above)<br>
 # Change log:
+# api
 <b>v.0.0.2</b><br>
 1) Actuator: /health, /info<br>
 2) Ability to work with Apache Tomcat. Min version is <b>9.0.43</b><br>
@@ -22,3 +23,5 @@ Service repair accounting application for vehicles.<br>
 <b>v1.0</b><br>
 Added encryption for subscriber's credentials.
 API for login and register process ready to use in production.
+# web 
+v0.1 is available. First initialization and use SpringMVC on project.
