@@ -17,11 +17,9 @@
       <property name = "suffix" value = ".jsp" />
    </bean>
    
-   <!-- need test task 3 -->
    <mvc:resources mapping="/resources/**" location="/resources/"
     cache-period="31556926"/>
  
     <mvc:annotation-driven />
-    <!--  -->
- 
+    
 </beans>
