@@ -24,4 +24,5 @@ Service repair accounting application for vehicles.<br>
 Added encryption for subscriber's credentials.
 API for login and register process ready to use in production.
 # web 
-v0.1 is available. First initialization and use SpringMVC on project.
+v0.1 is available. First initialization and use SpringMVC on project.<br>
+v0.2 is available. Added simple css.
