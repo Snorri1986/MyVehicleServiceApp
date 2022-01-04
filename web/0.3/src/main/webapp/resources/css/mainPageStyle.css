@@ -1,0 +1,36 @@
+body {
+    background-color: lightyellow;
+}
+
+/* ready to commit task 7 */
+.dividline {
+	border-left: 6px double black;
+	height: 700px;
+	left: 50%;
+	position: absolute;
+	margin-left: -3px;
+	top: 50;
+	bottom: 0;
+}
+/**/
+
+/*need test task 2 */
+#authHeader {
+	margin-left: 300px;
+}
+
+#authForm {
+	width: 300px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+	display: block;
+}
+/**/
+
+/* need test task 3 */
+#registerHeader {
+    margin-left: 300px;
+}
+/**/
