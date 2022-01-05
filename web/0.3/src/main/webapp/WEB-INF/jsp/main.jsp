@@ -14,12 +14,18 @@
       <div class="dividline"></div>
       <!--  -->
       
-      <!-- need test task 2 -->
+      <!-- ready to commit task 2 -->
       <div id="authHeader">
       <h3>Log In:</h3>
       </div>
       
-      <div class="container">
+      <!-- ready to commit task 3 -->
+      <div id="registerHeader">
+      <h3>Registration:</h3>
+      </div>
+      <!--  -->
+      
+     <div class="container"> 
       <form method="post" id="authForm" action="#">
       <label for="fname">login:</label>
       <input type="text" id="fname" name="login" placeholder="login...">
@@ -27,7 +33,23 @@
       <input type="password" id="fpass" name="password" placeholder="password...">
       <input type="submit" style="margin-left: 100px;" value="Submit">
       </form> 
-      </div>
+      </div> 
+       
+      <!-- ready to commit task 3 -->
+      <div class="container"> 
+      <form method="post" id="regForm" style="float: right;" action="#">
+      <label for="fname">login:</label>
+      <input type="text" id="fname" name="login" placeholder="login...">
+      <label for="fpass">pass:</label>
+      <input type="password" id="fpass" name="password" placeholder="password...">
+      <label for="fnativename">name:</label>
+      <input type="text" id="fnativename" name="name" placeholder="native name...">
+      <label for="fsurname">sname:</label>
+      <input type="text" id="fsurname" name="surname" placeholder="surname...">
+      <input type="submit" style="margin-left: 100px;" value="Submit">
+      </form> 
+      </div> 
       <!--  -->
+      
    </body>
 </html>
