@@ -2,7 +2,6 @@ body {
     background-color: lightyellow;
 }
 
-/*ready to commit task 7*/
 .dividline {
 	border-left: 6px double black;
 	height: 700px;
@@ -12,9 +11,7 @@ body {
 	top: 50;
 	bottom: 0;
 }
-/**/
 
-/*ready to commit task 2*/
 #authHeader {
 	margin-left: 300px;
 }
@@ -27,21 +24,15 @@ body {
 	padding: 20px;
 	display: block;
 }
-/**/
 
-/* ready to commit task 3*/
 #authHeader, #registerHeader {
 	display: inline-block;
 }
-/**/
 
-/*ready to commit task 3*/
 #registerHeader {
 	margin-left: 700px;
 }
-/**/
 
-/*ready to commit task 3*/
 #regForm {
 	width: 300px;
 	margin-top: -138px; 
@@ -51,9 +42,3 @@ body {
 	padding: 20px;
 	display: block;
 }
-/**/
-
-
-
-
-
