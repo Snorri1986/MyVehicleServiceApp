@@ -52,7 +52,7 @@
       --> 
       
       <!-- need test task 20.1.1.2 -->
-      <form:form method="POST" id="regForm" style="float: right;" action="https://ws-mvs-login.herokuapp.com/register" modelAttribute="SubscriberModel">
+      <form:form method="POST" id="regForm" style="float: right;" action="https://ws-mvs-login.herokuapp.com/register" modelAttribute="subscriberModel">
       <table>
             <tr>
                 <td><form:label path="username">login:</form:label></td>
@@ -72,6 +72,10 @@
              <tr>
                 <td><form:label path="lastname">lastname:</form:label></td>
                 <td><form:input path="lastname"/></td>
+            </tr>
+            
+            <tr>
+                <td><input type="submit" value="Submit"/></td>
             </tr>
       </table>
       </form:form>>
