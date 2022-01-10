@@ -41,7 +41,7 @@ public class TestJunit {
 
 		WsMvsLoginApplication wsmvsloginapp = new WsMvsLoginApplication();
 
-		String uri = "postgres://ftusfnlstlhiyg:08d7cf2591072f663cdb3e3ae02b0124bbd86caa5324420b2041289c12719d31@ec2-34-252-251-16.eu-west-1.compute.amazonaws.com:5432/d96fj8vd88p3t6";
+		String uri = "<uri>";
 
 		URI dbUri = null;
 		try {
