@@ -10,7 +10,8 @@ Service repair accounting application for vehicles.<br>
 <b>v.0.0.2</b> is available. 1) Actuator: /health, /info; 2) Ability to work with Apache Tomcat. Min version is <b>9.0.43</b><br>
 <b>v.0.3</b> is available. 1) Connection with remote database on Heroku; 2) Added JUnit tests.</b><br>
 <b>v.0.4</b> is available. 1) created db objects for register process.<br>
-<b>v.0.5</b> is available. 1) created all classes and methods for register process; 2) added web-service documentation in JavaDoc format started from v0.5<br>
+<b>v.0.5</b> is available. 1) created all classes and methods for register process; 2) added web-service documentation in JavaDoc format 
+started from v0.5<br>
 <b>v.0.5.1</b> is available. 1) improved registration. Duplicate logins - not allowed.<br>
 <b>v1.0</b> is available. Added encryption for subscriber's credentials. API for login and register process ready to use in production.<br>
 <b>v1.1</b> is available. Added simple logging for /register endpoint.<br>
