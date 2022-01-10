@@ -22,7 +22,8 @@ Service repair accounting application for vehicles.<br>
 1) improved registration. Duplicate logins - not allowed.<br>
 <b>v1.0</b><br>
 Added encryption for subscriber's credentials.
-API for login and register process ready to use in production.
+API for login and register process ready to use in production.<br>
+<b>v1.1</b> Added simple logging for /register endpoint.
 # web 
 v0.1 is available. First initialization and use SpringMVC on project.<br>
 v0.2 is available. Added simple css.<br>
