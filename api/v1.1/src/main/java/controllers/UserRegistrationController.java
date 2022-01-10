@@ -22,7 +22,7 @@ import repository.DataBaseBridge;
 /**
  * Description: The controller class for registration Request example: {
  * "login":"Ivan", "password":"Pass", "fname":"Ivan", "lname":"Ivanov" }
- * Response example: { "code": 0 }
+ * Response example: { "code": 0 } Last modify: v1.1 10.01.2022 - add logging.
  *
  * @author Denys Shabelnyk
  * @since 0.5
@@ -30,17 +30,16 @@ import repository.DataBaseBridge;
 @RestController
 public class UserRegistrationController {
 
-	// need test task 21.1
-	Logger logger = LoggerFactory.getLogger(UserRegistrationController.class);
-	// ... //
+	private static final Logger logger = LoggerFactory.getLogger(UserRegistrationController.class);
 
 	@Autowired
 	DataBaseBridge dbBridge;
 
 	/**
 	 * Description: method for handling new subscriber registration requests. Last
-	 * modify on v1.0: ->
-	 * Utils.getBase64HashPhrase(registerRequestModel.getPassword())
+	 * modify: v1.0: ->
+	 * Utils.getBase64HashPhrase(registerRequestModel.getPassword()) v1.1: ->
+	 * 10.01.2022 - add logging for incoming register request on info level.
 	 *
 	 * @author Denys Shabelnyk
 	 * @param registerRequestModel - a request which written by JSON and send from
@@ -58,9 +57,7 @@ public class UserRegistrationController {
 		RegisterResponseModel registerResponseModel = null;
 		Integer result = 0;
 
-		// need test task 21.1
-		logger.trace("Incoming request: {}", registerRequestModel.toString());
-		// ... //
+		logger.info("Incoming register request(info): {}", registerRequestModel.toString());
 
 		result = dbBridge.setNewUser(registerRequestModel.getUsername(),
 				Utils.getBase64HashPhrase(registerRequestModel.getPassword()), registerRequestModel.getFirstname(),
