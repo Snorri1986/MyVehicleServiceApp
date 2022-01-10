@@ -1,7 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!-- need test task 20.1.1.2 -->
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<!--  -->
 <%@ page session="false"%>
 <html>
    <head>
@@ -32,26 +30,6 @@
       </form> 
       </div> 
        
-      
-      <!-- <div class="container"> -->
-      <!-- ready to commit task 20.1 -->
-      <!-- <form method="post" id="regForm" style="float: right;" action="https://ws-mvs-login.herokuapp.com/register"> -->
-      <!--  -->
-      <!--  
-      <label for="fnamereg">login:</label>
-      <input type="text" id="fnamereg" name="login" placeholder="login...">
-      <label for="fpassreg">pass:</label>
-      <input type="password" id="fpassreg" name="password" placeholder="password...">
-      <label for="fnativename">name:</label>
-      <input type="text" id="fnativename" name="name" placeholder="native name...">
-      <label for="fsurname">sname:</label>
-      <input type="text" id="fsurname" name="surname" placeholder="surname...">
-      <input type="submit" style="margin-left: 100px;" value="Submit">
-      </form> 
-      </div>
-      --> 
-      
-      <!-- need test task 20.1.1.2 -->
       <form:form method="POST" id="regForm" style="float: right;" action="https://ws-mvs-login.herokuapp.com/register" modelAttribute="subscriberModel">
       <table>
             <tr>
@@ -79,7 +57,5 @@
             </tr>
       </table>
       </form:form>>
-      <!--  -->
-      
    </body>
 </html>

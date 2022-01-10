@@ -10,11 +10,8 @@
    http://www.springframework.org/schema/mvc
    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-   <!-- ready to commit task 20.1.1.2 -->
-   <!-- <context:component-scan base-package = "snorri1986.main" /> -->
    <context:component-scan base-package = "snorri1986.main,models" />
-   <!--  -->
-
+   
    <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
       <property name = "prefix" value = "/WEB-INF/jsp/" />
       <property name = "suffix" value = ".jsp" />

@@ -1,4 +1,3 @@
-//ready to commit 20.4.1.1
 package models;
 
 import org.springframework.stereotype.Component;
@@ -9,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author Denys Shabelnyk Description: Class model for new subscriber
  *
  */
-@Component // ready to commit task 20.1.1.2
+@Component
 public class SubscriberModel {
 	private String username;
 	private String password;
@@ -131,4 +130,3 @@ public class SubscriberModel {
 				+ ", lastname=" + lastname + "]";
 	}
 }
-// ... //

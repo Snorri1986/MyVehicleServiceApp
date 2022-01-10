@@ -9,17 +9,15 @@ import org.springframework.web.servlet.ModelAndView;
 import models.SubscriberModel;
 
 /**
- * @author Denys Shabelnyk Description: controller for main page
- *
+ * @author Denys Shabelnyk Description: controller for main page Last modify:
+ *         v0.4 10.01.2022 - add injection of SubscriberModel
  */
 @Controller
 @RequestMapping("/main")
 public class MainPageController {
 
-	// need test task 20.1.1.2
 	@Autowired
 	SubscriberModel subscriberModel;
-	// ... //
 
 	/**
 	 * Description: method bundle with main.jsp page
@@ -40,7 +38,13 @@ public class MainPageController {
 	 * return "main"; }
 	 */
 
-	// need test task 20.1.1.2
+	/**
+	 * Description: method bundle with main.jsp page
+	 *
+	 * @return ModelAndView - web page with static text and form depended with model
+	 * @since 0.4
+	 *
+	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView printGreatings() {
 		ModelAndView modelAndView = new ModelAndView();
@@ -49,6 +53,4 @@ public class MainPageController {
 		modelAndView.addObject("message", "Welcome on MyServiceVehicleApplication web page");
 		return modelAndView;
 	}
-	// ... //
-
 }
