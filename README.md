@@ -28,4 +28,5 @@ API for login and register process ready to use in production.<br>
 # web 
 v0.1 is available. First initialization and use SpringMVC on project.<br>
 v0.2 is available. Added simple css.<br>
-v0.3 is available. Added two forms on main.jsp. 
+v0.3 is available. Added two forms on main.jsp.<br>
+v0.4 is available. Registration form was rebuilded and binded with ws-mvs-login API.
