@@ -19,7 +19,8 @@ started from v0.5<br>
 <b>v1.3</b> is available. Added loggin for /login and improve loggin process for /register.
 Minor change for integration ws-mvs-login and mvs-web in auth process.
 # web 
-v0.1 is available. First initialization and use SpringMVC on project.<br>
-v0.2 is available. Added simple css.<br>
-v0.3 is available. Added two forms on main.jsp.<br>
-v0.4 is available. Registration form was rebuilded and binded with ws-mvs-login API.
+<b>v0.1</b> is available. First initialization and use SpringMVC on project.<br>
+<b>v0.2</b> is available. Added simple css.<br>
+<b>v0.3</b> is available. Added two forms on main.jsp.<br>
+<b>v0.4</b> is available. Registration form was rebuilded and binded with ws-mvs-login API.<br>
+<b>v0.5</b> is available. Authentication form was rebuilded and binded with ws-mvs-login API.
