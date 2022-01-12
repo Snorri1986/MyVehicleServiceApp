@@ -29,9 +29,7 @@ import repository.DataBaseBridge;
 @RestController
 public class UserAuthorizationController {
 
-	// need test task 26.3
 	private static final Logger logger = LoggerFactory.getLogger(UserAuthorizationController.class);
-	// ... //
 
 	@Autowired
 	DataBaseBridge dbBridge;
@@ -39,7 +37,7 @@ public class UserAuthorizationController {
 	/**
 	 * Description: method for handling authorization requests Last modify on v1.0:
 	 * -> Utils.getBase64HashPhrase(loginRequestModel.getPassword()) Last modify on
-	 * v1.3 -> remove request body annotation
+	 * v1.3 -> remove request body annotation and added logging
 	 *
 	 * @author Denys Shabelnyk
 	 * @param loginRequestModel - a request which written by JSON and send from
@@ -56,9 +54,7 @@ public class UserAuthorizationController {
 		LoginResponseModel loginResponseModel = null;
 		Integer result = 0;
 
-		// need test task 26.3
 		logger.info("Incoming authentication request(info): {}", loginRequestModel.toString());
-		// ... //
 
 		result = dbBridge.checkUserAuth(loginRequestModel.getUsername(),
 				Utils.getBase64HashPhrase(loginRequestModel.getPassword()));
@@ -68,9 +64,7 @@ public class UserAuthorizationController {
 		ObjectMapper regResult = new ObjectMapper();
 		loginResponseModel = regResult.readValue(resultInString, LoginResponseModel.class);
 
-		// need test task 26.3
 		logger.info("Authentication response (info): {}", loginResponseModel.toString());
-		// ... //
 
 		return loginResponseModel;
 	}

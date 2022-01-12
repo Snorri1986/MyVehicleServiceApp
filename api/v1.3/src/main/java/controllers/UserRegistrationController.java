@@ -39,7 +39,8 @@ public class UserRegistrationController {
 	 * modify: v1.0: ->
 	 * Utils.getBase64HashPhrase(registerRequestModel.getPassword()) v1.1: ->
 	 * 10.01.2022 - add logging for incoming register request on info level. v1.2:
-	 * -> 10.01.2022 - remove RequestBody annotation.
+	 * -> 10.01.2022 - remove RequestBody annotation. v1.3 -> added logging for
+	 * response
 	 *
 	 * @author Denys Shabelnyk
 	 * @param registerRequestModel - a request which written by JSON and send from
@@ -67,9 +68,7 @@ public class UserRegistrationController {
 		ObjectMapper regResult = new ObjectMapper();
 		registerResponseModel = regResult.readValue(resultInString, RegisterResponseModel.class);
 
-		// need test task 26.4
 		logger.info("Register response (info): {}", registerResponseModel.toString());
-		// ... //
 
 		return registerResponseModel;
 	}
