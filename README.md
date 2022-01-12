@@ -15,7 +15,9 @@ started from v0.5<br>
 <b>v.0.5.1</b> is available. 1) improved registration. Duplicate logins - not allowed.<br>
 <b>v1.0</b> is available. Added encryption for subscriber's credentials. API for login and register process ready to use in production.<br>
 <b>v1.1</b> is available. Added simple logging for /register endpoint.<br>
-<b>v1.2</b><is available. Minor change for integration ws-mvs-login and mvs-web<br>
+<b>v1.2</b> is available. Minor change for integration ws-mvs-login and mvs-web<br>
+<b>v1.3</b> is available. Added loggin for /login and improve loggin process for /register.
+Minor change for integration ws-mvs-login and mvs-web in auth process.
 # web 
 v0.1 is available. First initialization and use SpringMVC on project.<br>
 v0.2 is available. Added simple css.<br>
