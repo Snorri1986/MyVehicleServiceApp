@@ -26,16 +26,22 @@
          <table>
             <tr>
                 <td><form:label path="username">login:</form:label></td>
-                <td><form:input path="username"/></td>
+                <!-- ready to commit 25.1  -->
+                <td><form:input path="username" style="margin-left: -70px;"/></td>
+                <!--  -->
             </tr>
             
             <tr>
                 <td><form:label path="password">password:</form:label></td>
-                <td><form:input path="password"/></td>
+                <!-- ready to commit 25.1   -->
+                <td><form:input path="password" style="margin-left: -70px;"/></td>
+                <!--  -->
             </tr>
             
              <tr>
-                <td><input type="submit" value="Submit"/></td>
+                 <!-- ready to commit 25.1 -->
+                <td><input type="submit" value="Submit" style="margin-left: 90px;"/></td>
+                <!--  -->
             </tr>
          </table>
       </form:form>

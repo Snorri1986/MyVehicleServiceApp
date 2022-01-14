@@ -28,12 +28,6 @@ body {
 }
 /**/
 
-/* need test 25.1 */
-#authForm input[type=submit] {
-	margin-left: 50px;
-}
-/**/
-
 #authHeader, #registerHeader {
 	display: inline-block;
 }
