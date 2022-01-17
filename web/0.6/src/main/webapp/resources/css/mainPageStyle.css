@@ -16,7 +16,6 @@ body {
 	margin-left: 300px;
 }
 
-/* ready to commit 25.1 old: padding: 20px; */
 #authForm {
 	width: 300px;
 	box-sizing: border-box;
@@ -26,7 +25,6 @@ body {
 	margin-left: 200px;
 	display: block;
 }
-/**/
 
 #authHeader, #registerHeader {
 	display: inline-block;
@@ -36,14 +34,13 @@ body {
 	margin-left: 700px;
 }
 
-/* need test 25.1 */
 #regForm {
 	width: 300px;
-	margin-top: -138px; 
+	margin-top: -115px; 
+	margin-right: 230px;
 	box-sizing: border-box;
 	border-radius: 5px;
 	background-color: #f2f2f2;
 	padding: 20px;
 	display: block;
 }
-/**/

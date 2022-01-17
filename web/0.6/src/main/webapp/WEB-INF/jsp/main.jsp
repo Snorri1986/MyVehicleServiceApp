@@ -20,28 +20,21 @@
       <h3>Registration:</h3>
       </div>
       
-      <!-- ready to commit 25.1 -->
+      
       <form:form method="POST" id="authForm" action="https://ws-mvs-login.herokuapp.com/login" modelAttribute="subscriberAuthModelRequest"> 
-      <!--  -->
          <table>
             <tr>
                 <td><form:label path="username">login:</form:label></td>
-                <!-- ready to commit 25.1  -->
                 <td><form:input path="username" style="margin-left: -70px;"/></td>
-                <!--  -->
             </tr>
             
             <tr>
                 <td><form:label path="password">password:</form:label></td>
-                <!-- ready to commit 25.1   -->
                 <td><form:input path="password" style="margin-left: -70px;"/></td>
-                <!--  -->
             </tr>
             
-             <tr>
-                 <!-- ready to commit 25.1 -->
+            <tr>
                 <td><input type="submit" value="Submit" style="margin-left: 90px;"/></td>
-                <!--  -->
             </tr>
          </table>
       </form:form>
@@ -49,27 +42,27 @@
       <form:form method="POST" id="regForm" style="float: right;" action="https://ws-mvs-login.herokuapp.com/register" modelAttribute="subscriberModel">
           <table>
             <tr>
-                <td><form:label path="username">login:</form:label></td>
-                <td><form:input path="username"/></td>
+                <td><form:label path="username" style="margin-left: -5px;">login:</form:label></td>
+                <td><form:input path="username" style="margin-left: -80px;"/></td>
             </tr>
             
             <tr>
-                <td><form:label path="password">password:</form:label></td>
-                <td><form:input path="password"/></td>
+                <td><form:label path="password" style="margin-left: -5px;">password:</form:label></td>
+                <td><form:input path="password" style="margin-left: -80px;"/></td>
             </tr>
             
             <tr>
-                <td><form:label path="firstname">name:</form:label></td>
-                <td><form:input path="firstname"/></td>
-            </tr>
-            
-             <tr>
-                <td><form:label path="lastname">lastname:</form:label></td>
-                <td><form:input path="lastname"/></td>
+                <td><form:label path="firstname" style="margin-left: -5px;">name:</form:label></td>
+                <td><form:input path="firstname" style="margin-left: -80px;"/></td>
             </tr>
             
             <tr>
-                <td><input type="submit" value="Submit"/></td>
+                <td><form:label path="lastname" style="margin-left: -5px;">lastname:</form:label></td>
+                <td><form:input path="lastname" style="margin-left: -80px;"/></td>
+            </tr>
+            
+            <tr>
+                <td><input type="submit" value="Submit" style="margin-left: 90px;"/></td>
             </tr>
          </table>
       </form:form>
