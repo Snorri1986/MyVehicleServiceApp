@@ -21,7 +21,7 @@
       </div>
       
       <!-- need test task 28.1 old: action="https://ws-mvs-login.herokuapp.com/login"  -->
-      <form:form method="POST" id="authForm" action="/auth" modelAttribute="subscriberAuthModelRequest"> 
+      <form:form method="POST" id="authForm" action="main/workdesk" modelAttribute="subscriberAuthModelRequest"> 
          <table>
             <tr>
                 <td><form:label path="username">login:</form:label></td>
