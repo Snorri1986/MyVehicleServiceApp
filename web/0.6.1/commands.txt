@@ -1,0 +1,2 @@
+1.Deploy on Heroku
+heroku deploy:war --war d:\Applications\mvs-web\mvs-web.war --app mvs-web
