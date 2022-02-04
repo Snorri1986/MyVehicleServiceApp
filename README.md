@@ -24,6 +24,8 @@ Minor change for integration ws-mvs-login and mvs-web in auth process.
 <b>v0.3</b> is available. Added two forms on main.jsp.<br>
 <b>v0.4</b> is available. Registration form was rebuilded and binded with ws-mvs-login API.<br>
 <b>v0.5</b> is available. Authentication form was rebuilded and binded with ws-mvs-login API.<br>
-<b>v0.6</b> is available. Improved CSS after changing forms in v0.5
+<b>v0.6</b> is available. Improved CSS after changing forms in v0.5<br>
+<b>v0.6.1</b> is available. Refactoring endpoints /login and /register using RestTemplate and 
+              add analyze response from ws-mvs-login in auth and register process
 # db
 <b>v1.2</b> is available. Fix idle bug in register process and added changing value about lastlogindate.
