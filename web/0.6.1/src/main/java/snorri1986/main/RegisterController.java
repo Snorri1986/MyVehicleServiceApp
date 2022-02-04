@@ -10,6 +10,12 @@ import org.springframework.web.client.RestTemplate;
 
 import models.SubscriberRegModelResponse;
 
+/**
+ * Description: controller for registration process. After succesfull
+ * registration subscriber redirects to vehicle-register page.
+ *
+ * @author Denys Shabelnyk
+ */
 @Controller
 @RequestMapping("/main/vehicle-register")
 public class RegisterController {
@@ -20,6 +26,14 @@ public class RegisterController {
 
 	SubscriberRegModelResponse subscriberRegModelResponse;
 
+	/**
+	 * Description: method of register process mapping
+	 *
+	 * @param formData - data from web form
+	 * @return String - web-page depended with auth code 0|1
+	 * @since 0.6.1
+	 *
+	 */
 	@RequestMapping(method = RequestMethod.POST)
 	public String myRegController(@RequestBody MultiValueMap<String, String[]> formData) {
 

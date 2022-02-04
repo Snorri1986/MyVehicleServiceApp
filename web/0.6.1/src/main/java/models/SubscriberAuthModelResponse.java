@@ -4,6 +4,11 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Description: class model for authentication response
+ *
+ * @author Denys Shabelnyk
+ */
 @Component
 public class SubscriberAuthModelResponse {
 	private Integer code;

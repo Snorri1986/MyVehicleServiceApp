@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>WorkDesk</title>
 </head>
-<body onload="alert('Authorization was successful')"> <!-- ready to commit 35.1 -->
+<body onload="alert('Authorization was successful')"> 
 <h2>Welcome on workdesk!</h2>
 </body>
 </html>

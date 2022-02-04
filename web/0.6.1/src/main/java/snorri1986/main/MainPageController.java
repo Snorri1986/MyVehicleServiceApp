@@ -11,8 +11,10 @@ import models.SubscriberAuthModelRequest;
 import models.SubscriberRegModelRequest;
 
 /**
- * @author Denys Shabelnyk Description: controller for main page Last modify:
- *         v0.4 10.01.2022 - add injection of SubscriberModel
+ * Description: controller for main page Last modify: v0.4 10.01.2022 - add
+ * injection of SubscriberModel
+ *
+ * @author Denys Shabelnyk
  */
 @EnableWebMvc
 @Controller
@@ -28,6 +30,7 @@ public class MainPageController {
 	 *
 	 * @return ModelAndView - web page with static text and form depended with model
 	 * @since 0.4
+	 *
 	 *
 	 */
 	@RequestMapping(method = RequestMethod.GET)

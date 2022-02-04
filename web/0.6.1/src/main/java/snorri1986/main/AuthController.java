@@ -10,6 +10,11 @@ import org.springframework.web.client.RestTemplate;
 
 import models.SubscriberAuthModelResponse;
 
+/**
+ * Description: controller for authentication process
+ *
+ * @author Denys Shabelnyk
+ */
 @Controller
 @RequestMapping("/main/workdesk")
 public class AuthController {
@@ -20,6 +25,14 @@ public class AuthController {
 
 	SubscriberAuthModelResponse subscriberAuthModelResponse;
 
+	/**
+	 * Description: method of auth process mapping
+	 *
+	 * @param formData - data from web form
+	 * @return String - web-page depended with auth code 0|1
+	 * @since 0.6.1
+	 *
+	 */
 	@RequestMapping(method = RequestMethod.POST)
 	public String myAuthController(@RequestBody MultiValueMap<String, String[]> formData) {
 

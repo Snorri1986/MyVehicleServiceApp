@@ -5,7 +5,9 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * @author Denys Shabelnyk Description: Class model for new subscriber
+ * Description: Class model for new subscriber
+ *
+ * @author Denys Shabelnyk
  *
  */
 @Component
