@@ -5,18 +5,18 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Description: class model for authentication response
+ * Description: class model for registration process response
  *
  * @author Denys Shabelnyk
  */
 @Component
-public class SubscriberAuthModelResponse {
+public class SubscriberRegModelResponse {
 	private Integer code;
 
-	public SubscriberAuthModelResponse() {
+	public SubscriberRegModelResponse() {
 	}
 
-	public SubscriberAuthModelResponse(Integer code) {
+	public SubscriberRegModelResponse(Integer code) {
 		this.code = code;
 	}
 
@@ -25,7 +25,7 @@ public class SubscriberAuthModelResponse {
 	 *
 	 * @author Denys Shabelnyk
 	 * @return Integer value of answer code
-	 * @since 0.7
+	 * @since 0.6.1
 	 */
 	@JsonProperty("code")
 	public Integer getCode() {
@@ -37,7 +37,7 @@ public class SubscriberAuthModelResponse {
 	 *
 	 * @param code - Integer value of response code
 	 * @author Denys Shabelnyk
-	 * @since 0.7
+	 * @since 0.6.1
 	 */
 	public void setCode(Integer code) {
 		this.code = code;
@@ -47,10 +47,10 @@ public class SubscriberAuthModelResponse {
 	 * Description: simple toString() method in default implementation
 	 *
 	 * @author Denys Shabelnyk
-	 * @since 0.7
+	 * @since 0.6.1
 	 */
 	@Override
 	public String toString() {
-		return "LoginResponseModel [code=" + code + "]";
+		return "RegisterResponseModel [code=" + code + "]";
 	}
 }

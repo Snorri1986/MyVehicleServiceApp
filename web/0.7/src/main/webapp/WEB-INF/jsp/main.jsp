@@ -20,7 +20,6 @@
       <h3>Registration:</h3>
       </div>
       
-      <!-- need test task 28.1 old: action="https://ws-mvs-login.herokuapp.com/login"  -->
       <form:form method="POST" id="authForm" action="main/workdesk" modelAttribute="subscriberAuthModelRequest"> 
          <table>
             <tr>
@@ -30,7 +29,7 @@
             
             <tr>
                 <td><form:label path="password">password:</form:label></td>
-                <td><form:input path="password" style="margin-left: -70px;"/></td>
+                <td><form:password path="password" style="margin-left: -70px;"/></td>
             </tr>
             
             <tr>
@@ -38,9 +37,8 @@
             </tr>
          </table>
       </form:form>
-      <!--  -->
       
-      <form:form method="POST" id="regForm" style="float: right;" action="https://ws-mvs-login.herokuapp.com/register" modelAttribute="subscriberModel">
+      <form:form method="POST" id="regForm" style="float: right;" action="main/vehicle-register" modelAttribute="subscriberRegModelRequest">
           <table>
             <tr>
                 <td><form:label path="username" style="margin-left: -5px;">login:</form:label></td>
@@ -49,7 +47,7 @@
             
             <tr>
                 <td><form:label path="password" style="margin-left: -5px;">password:</form:label></td>
-                <td><form:input path="password" style="margin-left: -80px;"/></td>
+                <td><form:password path="password" style="margin-left: -80px;"/></td>
             </tr>
             
             <tr>
@@ -67,5 +65,5 @@
             </tr>
          </table>
       </form:form>
-   </body>
+    </body>
 </html>
