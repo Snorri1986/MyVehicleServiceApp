@@ -27,6 +27,7 @@ Minor change for integration ws-mvs-login and mvs-web in auth process.
 <b>v0.6</b> is available. Improved CSS after changing forms in v0.5<br>
 <b>v0.6.1</b> is available. Refactoring endpoints /login and /register using RestTemplate and 
               add analyze response from ws-mvs-login in auth and register process<br>
-<b>v0.6.2</b> is available. Fixed minor errors with .jsp pages and web.xml files
+<b>v0.6.2</b> is available. Fixed minor errors with .jsp pages and web.xml files<br>
+<b>v0.6.3</b> is available. Updated logging.
 # db
 <b>v1.2</b> is available. Fix idle bug in register process and added changing value about lastlogindate.
