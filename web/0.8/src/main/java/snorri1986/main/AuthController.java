@@ -4,9 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.MultiValueMap;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,14 +30,8 @@ public class AuthController {
 	// need test task 31
 	@Autowired
 	AuthFormValidator authFormValidator;
-
-	@InitBinder
-	protected void initBinder(WebDataBinder binder) {
-		binder.setValidator(authFormValidator);
-	}
 	// ... //
 
-	// need test task 31 add @validated before MultiValueMap<String, String[]>
 	/**
 	 * Description: method of auth process mapping with logging into console for
 	 * request and response
@@ -51,12 +42,35 @@ public class AuthController {
 	 *
 	 */
 	@RequestMapping(method = RequestMethod.POST)
-	public String myAuthController(@RequestBody @Validated MultiValueMap<String, String[]> formData) {
+	public String myAuthController(@RequestBody MultiValueMap<String, String[]> formData) {
+
+		// need test task 31
+		Integer validationResult;
+		// ... //
 
 		// Log data from HTML form in console
 		for (String formKeyIterator : formData.keySet()) {
 			System.out.print("Key: " + formData.toString());
 			System.out.println("Value: " + formData.get(formKeyIterator).toString());
+
+			// TODO: validation data from authForm
+			// need test task 31
+			// check on NULL
+			validationResult = authFormValidator.chkByNull(formData.toString());
+			if (validationResult == authFormValidator.errNullValueCode)
+				return "login is null";
+			validationResult = authFormValidator.chkByNull(formData.get(formKeyIterator).toString());
+			if (validationResult == authFormValidator.errNullValueCode)
+				return "password is null";
+			// check Latin letters.Check only login
+			validationResult = authFormValidator.chlLatinLetters(formData.toString());
+			if (validationResult == authFormValidator.errNotlatinLettersCode)
+				return "login doesn't consist with Latin letters";
+			// check password length
+			validationResult = authFormValidator.chkPassowrdLength(formData.get(formKeyIterator).toString());
+			if (validationResult == authFormValidator.errPasswordShortCode)
+				return "Password is too short";
+			// ... //
 		}
 
 		Integer responseBody;

@@ -2,35 +2,37 @@
 package validators;
 
 import org.springframework.stereotype.Component;
-import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
-import org.springframework.validation.Validator;
-
-import models.SubscriberAuthModelRequest;
 
 @Component
 public class AuthFormValidator implements Validator {
 
+	private final Integer minPasswordLength = 5;
+
+	public Integer errNullValueCode = -2;
+	public Integer errNotlatinLettersCode = -3;
+	public Integer errPasswordShortCode = -4;
+
 	@Override
-	public boolean supports(Class<?> clazz) {
-		return SubscriberAuthModelRequest.class.equals(clazz);
+	public Integer chkByNull(String val) {
+		if (val.equalsIgnoreCase("null"))
+			return errNullValueCode;
+		return null;
 	}
 
 	@Override
-	public void validate(Object target, Errors errors) {
-		SubscriberAuthModelRequest authRequest = (SubscriberAuthModelRequest) target;
+	public Integer chlLatinLetters(String val) {
+		boolean valid = val.matches("\\w+");
+		if (!valid)
+			return errNotlatinLettersCode;
+		return null;
+	}
 
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "NotEmpty.authForm.username");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty.authForm.password");
-
-		if (authRequest.getUsername().equalsIgnoreCase(null)) {
-			errors.rejectValue("username", "NotEmpty.authForm.username");
-		}
-
-		if (authRequest.getPassword().equalsIgnoreCase(null)) {
-			errors.rejectValue("password", "NotEmpty.authForm.password");
-		}
-
+	@Override
+	public Integer chkPassowrdLength(String val) {
+		int strLength = val.length();
+		if (strLength < minPasswordLength)
+			return errPasswordShortCode;
+		return null;
 	}
 
 }
