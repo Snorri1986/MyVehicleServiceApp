@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 
 import models.SubscriberAuthModelResponse;
-import validators.AuthFormValidator;
 
 /**
  * Description: controller for authentication process
@@ -26,11 +25,6 @@ public class AuthController {
 
 	SubscriberAuthModelResponse subscriberAuthModelResponse;
 
-	// need test task 31
-	// @Autowired
-	// AuthFormValidator authFormValidator;
-	// ... //
-
 	/**
 	 * Description: method of auth process mapping with logging into console for
 	 * request and response
@@ -42,18 +36,6 @@ public class AuthController {
 	 */
 	@RequestMapping(method = RequestMethod.POST)
 	public String myAuthController(@RequestBody MultiValueMap<String, String[]> formData) {
-
-		AuthFormValidator authFormValidator = new AuthFormValidator();
-
-		// need test task 31
-		Integer validationRes = authFormValidator.validateProcess(formData);
-		if (validationRes == AuthFormValidator.errNullValueCode)
-			return "Login or password is empty";
-		else if (validationRes == AuthFormValidator.errNotlatinLettersCode)
-			return "Login must be only in Latin letters";
-		else if (validationRes == AuthFormValidator.errPasswordShortCode)
-			return "Password is too short";
-		// ... //
 
 		// Log data from HTML form in console
 		for (String formKeyIterator : formData.keySet()) {

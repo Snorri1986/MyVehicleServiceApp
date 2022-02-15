@@ -11,7 +11,7 @@
    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
    <!-- need test task 31 -->
-   <context:component-scan base-package = "snorri1986.main,models,validators" />
+   <context:component-scan base-package = "snorri1986.main,models" />
    <!--  -->
    
    <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">

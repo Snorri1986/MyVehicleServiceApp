@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @Component
 public class SubscriberAuthModelRequest {
+
 	private String username;
 	private String password;
 
