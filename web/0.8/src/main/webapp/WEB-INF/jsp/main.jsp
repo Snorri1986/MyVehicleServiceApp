@@ -30,23 +30,15 @@
     	}
       }
       
-      // TODO: add new function validateRegForm()
-      // 1. Check login for Latin letters
-      // 2. Password and login can't be blank
-      // 2.1 Password.length > more then 5 character
+      
       function validateRegForm() {
     	  
-    	const var minPassLength = 5;
+    	const minPassLength = 5;
     	  
     	name = document.getElementById("loginRegister").value;  
       	password = document.getElementById("userpassRegister").value;
       	
-      	/*test code*/
-      	alert(name);
-      	alert(password);
-      	/***********/
-      	
-      	if (name == null || name == ""){  
+        if (name == null || name == ""){  
       	 alert("Login can't be blank");  
             return false;
       	}
@@ -85,8 +77,6 @@
       <h3>Registration:</h3>
       </div>
       
-      <!-- TODO: change id="login" -> id="loginAuth" -->
-      <!-- TODO: change id="userpass" -> id="userpassAuth"-->
       <form:form method="POST" id="authForm" action="main/workdesk" onsubmit="return validateAuthForm()" modelAttribute="subscriberAuthModelRequest"> 
          <table>
             <tr>
@@ -105,10 +95,6 @@
          </table>
       </form:form>
       
-      
-      <!-- TODO: onsubmit attribute with call function "return validateRegForm()" -->
-      <!-- TODO: add atribut id to login -->
-      <!-- TODO: add atribut id to password -->
       <form:form method="POST" id="regForm" style="float: right;" action="main/vehicle-register" onsubmit="return validateRegForm()" modelAttribute="subscriberRegModelRequest">
           <table>
             <tr>
