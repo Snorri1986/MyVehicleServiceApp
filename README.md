@@ -29,6 +29,7 @@ Minor change for integration ws-mvs-login and mvs-web in auth process.
               add analyze response from ws-mvs-login in auth and register process<br>
 <b>v0.6.2</b> is available. Fixed minor errors with .jsp pages and web.xml files<br>
 <b>v0.6.3</b> is available. Updated logging.<br>
-<b>v0.7</b> is available. Improved CSS and navigation between pages.
+<b>v0.7</b> is available. Improved CSS and navigation between pages.<br>
+<b>v0.8</b> is available. Added form validator before send request to ws-mvs-login.
 # db
 <b>v1.2</b> is available. Fix idle bug in register process and added changing value about lastlogindate.
