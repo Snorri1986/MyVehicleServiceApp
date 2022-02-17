@@ -33,3 +33,12 @@ Minor change for integration ws-mvs-login and mvs-web in auth process.
 <b>v0.8</b> is available. Added form validator before send request to ws-mvs-login.
 # db
 <b>v1.2</b> is available. Fix idle bug in register process and added changing value about lastlogindate.
+# mobile
+# About version of application.
+From next revision I decided to change version history in the project.<br>
+Versions of application will be marked as example:<br>
+<b>w</b> - version of web part<br>
+<b>a</b> - version of API part<br>
+<b>d</b> - version of DB objects<br>
+<b>m</b> - version of Mobile part.<br>
+Current version has version marked -> <b>w0.8a1.3d1.2m0.0</b>
