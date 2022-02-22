@@ -77,10 +77,12 @@
       <h3>Registration:</h3>
       </div>
       
+      <!-- ready to commit with new production href -->
       <div id="flags">
-         <img src="<c:url value="/resources/images/uk.png" />">
-         <img src="<c:url value="/resources/images/rus.png" />">
+         <a href="../workdesk"><img src="<c:url value="/resources/images/uk.png" />"></a>
+         <a href="../workdesk"><img src="<c:url value="/resources/images/rus.png" />"></a>
       </div>
+      <!--  -->
       
       <form:form method="POST" id="authForm" action="main/workdesk" onsubmit="return validateAuthForm()" modelAttribute="subscriberAuthModelRequest"> 
          <table>
