@@ -77,7 +77,7 @@
       <h3>Registration:</h3>
       </div>
       
-      <!-- ready to commit with new production href -->
+      <!-- TODO: change URL in href  -->
       <div id="flags">
          <a href="../workdesk"><img src="<c:url value="/resources/images/uk.png" />"></a>
          <a href="../workdesk"><img src="<c:url value="/resources/images/rus.png" />"></a>
