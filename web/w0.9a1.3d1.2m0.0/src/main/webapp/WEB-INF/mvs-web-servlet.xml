@@ -11,22 +11,23 @@
    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
    <context:component-scan base-package = "snorri1986.main,models" />
-  
+   
    <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
       <property name = "prefix" value = "/WEB-INF/jsp/" />
       <property name = "suffix" value = ".jsp" />
    </bean>
    
-   <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-      <property name="basename" value="messages" />
+   <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+         <property name="basename" value="classpath:messages"/> 
+         <property name="defaultEncoding" value="UTF-8"/>
    </bean>
    
    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-    <property name="defaultLocale" value="en" />
+         <property name="defaultLocale" value="en" />
    </bean>
   
    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-    <property name="paramName" value="lang" />
+         <property name="paramName" value="lang" />
    </bean>
    
    <mvc:resources mapping="/resources/**" location="/resources/"

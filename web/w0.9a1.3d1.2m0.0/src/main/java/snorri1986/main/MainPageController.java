@@ -1,6 +1,5 @@
 package snorri1986.main;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,8 +20,10 @@ import models.SubscriberRegModelRequest;
 @RequestMapping("/main")
 public class MainPageController {
 
-	@Autowired
-	SubscriberRegModelRequest subscriberModel;
+	// need test 38.5.5
+	// @Autowired
+	// SubscriberRegModelRequest subscriberModel;
+	// ... //
 
 	/**
 	 * Description: method bundle with main.jsp page Last modify: 11.01.2022 v0.5
@@ -42,9 +43,4 @@ public class MainPageController {
 		modelAndView.addObject("message", "Welcome on MyServiceVehicleApplication web page");
 		return modelAndView;
 	}
-
-	// TODO: show flags
-
-	// ... //
-
 }
