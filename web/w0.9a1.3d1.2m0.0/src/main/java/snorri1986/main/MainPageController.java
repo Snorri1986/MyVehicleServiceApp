@@ -1,5 +1,6 @@
 package snorri1986.main;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,13 +18,11 @@ import models.SubscriberRegModelRequest;
  */
 @EnableWebMvc
 @Controller
-@RequestMapping("/main")
+@RequestMapping("/main?lang=en")
 public class MainPageController {
 
-	// need test 38.5.5
-	// @Autowired
-	// SubscriberRegModelRequest subscriberModel;
-	// ... //
+	@Autowired
+	SubscriberRegModelRequest subscriberModel;
 
 	/**
 	 * Description: method bundle with main.jsp page Last modify: 11.01.2022 v0.5

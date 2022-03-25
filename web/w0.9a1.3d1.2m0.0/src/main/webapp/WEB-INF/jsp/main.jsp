@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%> 
 <%@ page session="false"%>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<html> 
    <head>
       <title>Welcome</title>
       <link href="resources/css/mainPageStyle.css" rel="stylesheet">
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-      
+        
    <script type="text/javascript">
       function validateAuthForm() {
     	  
@@ -64,37 +64,39 @@
      }
       
     </script>
-      
+   
    </head>
    <body>
-      <h2 style="text-align:center" th:text="${main.welcome.title}">Welcome on MyServiceVehicleApplication web page</h2>
-      <div class="dividline">
+   
+      <h2 style="text-align:center">Welcome on MyServiceVehicleApplication web page</h2>
+          <div class="dividline">
       </div>
-      
+   
       <div id="authHeader">
-      <h2 style="text-align:center" th:text="${main.welcome.title}">Log In:</h2>
+          <h2 style="text-align:center">Log In:</h2>
       </div>
+   
       
       <div id="registerHeader">
-      <h2 style="text-align:center" th:text="${main.registration.title}">Registration:</h2>
+          <h2 style="text-align:center">Registration:</h2>
       </div>
-      
-      
+    
+     
       <div id="flags">
-         <a href="../workdesk"><img src="<c:url value="/resources/images/uk.png" />"></a>
-         <a href="../workdesk"><img src="<c:url value="/resources/images/rus.png" />"></a>
+        <a href="/mvs-web/main?lang=en"><img src="<c:url value="/resources/images/uk.png" />"></a> 
+        <a href="/mvs-web/main?lang=ru"><img src="<c:url value="/resources/images/rus.png" />"></a> 
       </div>
       
-      
-      <form:form method="POST" id="authForm" action="main/workdesk" onsubmit="return validateAuthForm()" modelAttribute="subscriberAuthModelRequest"> 
+    
+     <form:form method="POST" id="authForm" action="main/workdesk" onsubmit="return validateAuthForm()" modelAttribute="subscriberAuthModelRequest"> 
          <table>
             <tr>
-                <td th:text="${main.form.login.field.login}"><form:label path="username">login:</form:label></td>
+                <td><form:label path="username">login</form:label></td>
                 <td><form:input id="loginAuth" path="username" style="margin-left: -70px;"/></td>
             </tr>
             
             <tr>
-                <td th:text="${main.form.login.field.password}"><form:label path="password">password:</form:label></td>
+                <td><form:label path="password">password</form:label></td>
                 <td><form:password id="userpassAuth" path="password" style="margin-left: -70px;"/></td>
             </tr>
             
@@ -103,7 +105,7 @@
             </tr>
          </table>
       </form:form>
-      
+    
       <form:form method="POST" id="regForm" style="float: right;" action="main/vehicle-register" onsubmit="return validateRegForm()" modelAttribute="subscriberRegModelRequest">
           <table>
             <tr>
