@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%> 
+<%-- need test task 38.5.6 --%>
+<%-- <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %> --%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
+<%-- --%>
 <%@ page session="false"%>
 <html> 
    <head>
@@ -64,39 +67,79 @@
      }
       
     </script>
-   
    </head>
    <body>
    
+      <!-- need test 38.5.6 -->
+      <fmt:setLocale value="${locale}" /> 
+      <fmt:setBundle basename = "messages" var = "lang" />
+      <!--  -->
+   
+      <!--  do not delete -->
+      <!--  
       <h2 style="text-align:center">Welcome on MyServiceVehicleApplication web page</h2>
           <div class="dividline">
       </div>
+      -->
+      <!--  -->
+      
+      <!--  need test task 38.5.6 -->
+      <h2 style="text-align:center"><fmt:message key="main.welcome.title" bundle="${lang}" /></h2>
+          <div class="dividline">
+      </div>
+      <!--  -->
    
+      <!--  do not delete -->
+      <!-- 
       <div id="authHeader">
           <h2 style="text-align:center">Log In:</h2>
       </div>
-   
+      -->
+      <!--   -->
       
+      <!--  need test task 38.5.6 -->
+       <div id="authHeader">
+          <h2 style="text-align:center"><fmt:message key="main.login.title" bundle="${lang}" /></h2>
+      </div>
+     <!--   -->
+   
+      <!-- do not delete -->
+      <!--  
       <div id="registerHeader">
           <h2 style="text-align:center">Registration:</h2>
       </div>
+      -->
+      <!--  -->
+      
+      <!--  need test task 38.5.6 -->
+      <div id="registerHeader">
+          <h2 style="text-align:center"><fmt:message key="main.registration.title" bundle="${lang}" /></h2>
+      </div>
+      <!--  -->
     
      
       <div id="flags">
         <a href="/mvs-web/main?lang=en"><img src="<c:url value="/resources/images/uk.png" />"></a> 
         <a href="/mvs-web/main?lang=ru"><img src="<c:url value="/resources/images/rus.png" />"></a> 
       </div>
-      
-    
-     <form:form method="POST" id="authForm" action="main/workdesk" onsubmit="return validateAuthForm()" modelAttribute="subscriberAuthModelRequest"> 
+     
+      <form:form method="POST" id="authForm" action="main/workdesk" onsubmit="return validateAuthForm()" modelAttribute="subscriberAuthModelRequest"> 
          <table>
             <tr>
-                <td><form:label path="username">login</form:label></td>
+                <!-- do not delete -->
+                <!-- <td><form:label path="username">login</form:label></td> -->
+                <!--  need test task 38.5.6 -->
+                <td><form:label path="username"><fmt:message key="main.form.login.field.login" bundle="${lang}" /></form:label></td>
+                <!--  -->
                 <td><form:input id="loginAuth" path="username" style="margin-left: -70px;"/></td>
             </tr>
             
             <tr>
-                <td><form:label path="password">password</form:label></td>
+                <!-- do not delete -->
+                <!-- <td><form:label path="password">password</form:label></td> -->
+                <!--  need test task 38.5.6 -->
+                <td><form:label path="password"><fmt:message key="main.form.login.field.password" bundle="${lang}" /></form:label></td>
+                <!--  -->
                 <td><form:password id="userpassAuth" path="password" style="margin-left: -70px;"/></td>
             </tr>
             

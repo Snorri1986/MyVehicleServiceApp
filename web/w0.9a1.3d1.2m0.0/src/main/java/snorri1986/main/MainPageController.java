@@ -1,11 +1,13 @@
 package snorri1986.main;
 
+import java.util.Locale;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import models.SubscriberAuthModelRequest;
 import models.SubscriberRegModelRequest;
@@ -16,25 +18,26 @@ import models.SubscriberRegModelRequest;
  *
  * @author Denys Shabelnyk
  */
-@EnableWebMvc
 @Controller
 @RequestMapping("/main?lang=en")
+@ComponentScan({ "snorri1986.main", "models" })
 public class MainPageController {
 
 	@Autowired
 	SubscriberRegModelRequest subscriberModel;
 
 	/**
-	 * Description: method bundle with main.jsp page Last modify: 11.01.2022 v0.5
-	 * Last modify on version 0.6.1
+	 * Description: method bundle with main.jsp page Last modify: 30.03.2022 Last
+	 * modify on version w0.9a1.3d1.2m0.0
 	 *
+	 * @param locale current locale code on the web request
 	 * @return ModelAndView - web page with static text and form depended with model
 	 * @since 0.4
 	 *
 	 *
 	 */
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView printGreatings() {
+	public ModelAndView printGreatings(Locale locale) {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("subscriberRegModelRequest", new SubscriberRegModelRequest());
 		modelAndView.addObject("subscriberAuthModelRequest", new SubscriberAuthModelRequest());

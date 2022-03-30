@@ -12,28 +12,13 @@
 
    <context:component-scan base-package = "snorri1986.main,models" />
    
+     
    <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
       <property name = "prefix" value = "/WEB-INF/jsp/" />
       <property name = "suffix" value = ".jsp" /> 
    </bean> 
-   
-   <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-         <property name="paramName" value="lang" />
-   </bean>
-
-    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />
-
-    <bean id="urlMapping"
-          class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-    <property name="interceptors">
-        <list>
-            <ref bean="localeChangeInterceptor" />
-        </list>
-    </property>
-    </bean>
   
-   <mvc:resources mapping="/resources/**" location="/resources/"
-    cache-period="31556926"/> 
+   <mvc:resources mapping="/resources/**" location="/resources/" cache-period="31556926"/> 
     
    <mvc:annotation-driven />
 </beans>
