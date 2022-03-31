@@ -1,0 +1,52 @@
+body {
+    background-color: lightyellow;
+}
+
+.dividline {
+	border-left: 6px double black;
+	height: 700px;
+	left: 50%;
+	position: absolute;
+	margin-left: -3px;
+	top: 50;
+	bottom: 0;
+}
+
+#authHeader {
+	margin-left: 300px;
+}
+
+#authForm {
+	width: 300px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 10px;
+	margin-left: 200px;
+	display: block;
+}
+
+#authHeader, #registerHeader {
+	display: inline-block;
+}
+
+#registerHeader {
+	margin-left: 700px;
+}
+
+#regForm {
+	width: 300px;
+	margin-top: -115px; 
+	margin-right: 230px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+	display: block;
+}
+
+#flags {
+	position: absolute;
+    right:0px;
+    top:0px;
+}
