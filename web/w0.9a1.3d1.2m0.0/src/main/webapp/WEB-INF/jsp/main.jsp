@@ -5,7 +5,7 @@
 <html> 
    <head>
       <title>Welcome</title>
-      <link href="resources/css/mainPageStyle.css" rel="stylesheet">
+      <link href="resources/css/mainPageStyle.css" rel="stylesheet"> 
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         
    <script type="text/javascript">
@@ -78,11 +78,6 @@
           <h2 style="text-align:center">Registration:</h2>
       </div>
       
-      <div id="flags">
-        <a href="/mvs-web/main?lang=en"><img src="<c:url value="/resources/images/uk.png" />"></a> 
-        <a href="/mvs-web/main?lang=ru"><img src="<c:url value="/resources/images/rus.png" />"></a> 
-      </div>
-     
       <form:form method="POST" id="authForm" action="main/workdesk" onsubmit="return validateAuthForm()" modelAttribute="subscriberAuthModelRequest"> 
          <table>
             <tr>

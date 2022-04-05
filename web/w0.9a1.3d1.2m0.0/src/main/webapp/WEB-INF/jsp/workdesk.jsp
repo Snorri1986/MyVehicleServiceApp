@@ -23,11 +23,5 @@ width:250px;
 <form:form method="GET" action="../main">
 <input type="submit" value="Back to main page"/>
 </form:form>
-<!-- TODO: change URL in href  --> 
-      <div id="locflags">
-         <a href="../workdesk"><img src="<c:url value="/resources/images/uk.png" />"></a>
-         <a href="../workdesk"><img src="<c:url value="/resources/images/rus.png" />"></a>
-      </div>
-<!--  -->
 </body>
 </html>
