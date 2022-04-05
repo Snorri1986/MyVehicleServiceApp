@@ -44,9 +44,3 @@ body {
 	padding: 20px;
 	display: block;
 }
-
-#flags {
-	position: absolute;
-    right:0px;
-    top:0px;
-}

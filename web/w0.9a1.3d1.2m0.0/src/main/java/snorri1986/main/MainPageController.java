@@ -1,7 +1,5 @@
 package snorri1986.main;
 
-import java.util.Locale;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -19,7 +17,7 @@ import models.SubscriberRegModelRequest;
  * @author Denys Shabelnyk
  */
 @Controller
-@RequestMapping("/main?lang=en")
+@RequestMapping("/main")
 @ComponentScan({ "snorri1986.main", "models" })
 public class MainPageController {
 
@@ -37,12 +35,13 @@ public class MainPageController {
 	 *
 	 */
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView printGreatings(Locale locale) {
+	public ModelAndView printGreatings() {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("subscriberRegModelRequest", new SubscriberRegModelRequest());
 		modelAndView.addObject("subscriberAuthModelRequest", new SubscriberAuthModelRequest());
 		modelAndView.setViewName("main");
 		modelAndView.addObject("message", "Welcome on MyServiceVehicleApplication web page");
 		return modelAndView;
+
 	}
 }
