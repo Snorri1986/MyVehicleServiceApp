@@ -56,7 +56,7 @@ public class AuthController {
 		if (responseBody == zeroAuthSuccessAuth)
 			return "workdesk";
 		else if (responseBody == negativeAuthSuccessAuth) {
-			return "Invalid login or password";
+			return "restore-password";
 		}
 
 		return null;

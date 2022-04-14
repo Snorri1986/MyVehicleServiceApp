@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page session="false"%>
-<html> 
+<html>  
    <head>
       <title>Welcome</title>
       <link href="resources/css/mainPageStyle.css" rel="stylesheet"> 
@@ -94,9 +94,11 @@
                 <td><input type="submit" value="Submit" style="margin-left: 90px;"/></td>
             </tr>
          </table>
-            <a href="#" style="margin-left: 165px;margin-top:100px;">Restore password</a>
+            <!--  need test task 39.2.1 do not delete-->
+            <!-- <a href="#" style="margin-left: 165px;margin-top:100px;">Restore password</a> -->
+            <!--  -->
       </form:form>
-    
+      
       <form:form method="POST" id="regForm" style="float: right;" action="main/vehicle-register" onsubmit="return validateRegForm()" modelAttribute="subscriberRegModelRequest">
           <table>
             <tr>
