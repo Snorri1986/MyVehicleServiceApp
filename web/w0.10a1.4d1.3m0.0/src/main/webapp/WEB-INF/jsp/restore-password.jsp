@@ -5,9 +5,53 @@
 <html>
 <head>
       <title>Restore password</title>
+<style>
+body {
+text-align: center;
+}
+
+#resetPasswordForm {
+    display: inline-block;
+}
+</style>
+<script type="text/javascript">
+      function validateResetPasswordForm() {
+    	  
+    	login = document.getElementById("labelLogin").value;  
+    	email = document.getElementById("labelEmail").value;
+    	
+    	if (login == null || login == ""){  
+    	 alert("Login can't be blank");  
+          return false;
+    	}
+    	
+    	//check for Latin letters
+    	if(!(/^[a-zA-Z]+$/.test(login))) {
+    		alert("Login only with Latin letters");
+    		return false;
+    	}
+    	
+    	//check email
+    	if(!(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(login))) {
+    		alert("Email incorrect. Need check");
+    		return false;
+    	}
+      }
+    </script>
 </head>
 <body>
 <h2 style="text-align: center;">If you have forgotten your password</h2>
 <h3 style="text-align: center;">Write your login and email below and click button "Get password"</h3>
+    <form:form method="POST" id="resetPasswordForm" action="#" onsubmit="return validateResetPasswordForm()"> 
+         <table>
+            <tr>
+                <td><label for="labelLogin">login:</label></td>
+                <td><input type="text" id="labelLogin" name="login" /></td>
+                <td><label for="labelEmail">email:</label></td>
+                <td><input type="text" id="labelEmail" name="email" /></td>
+                <td><input type="submit" value="Get Password" /></td>
+            </tr>
+         </table>
+    </form:form>
 </body>
 </html>

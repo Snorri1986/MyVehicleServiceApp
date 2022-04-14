@@ -94,9 +94,6 @@
                 <td><input type="submit" value="Submit" style="margin-left: 90px;"/></td>
             </tr>
          </table>
-            <!--  need test task 39.2.1 do not delete-->
-            <!-- <a href="#" style="margin-left: 165px;margin-top:100px;">Restore password</a> -->
-            <!--  -->
       </form:form>
       
       <form:form method="POST" id="regForm" style="float: right;" action="main/vehicle-register" onsubmit="return validateRegForm()" modelAttribute="subscriberRegModelRequest">

@@ -10,12 +10,6 @@ form {
 margin: 0 auto;
 width:250px;
 }
-
-#locflags {
-	position: absolute;
-    right:0px;
-    top:0px;
-}
 </style>
 </head>
 <body onload="alert('Authorization was successful')"> 
