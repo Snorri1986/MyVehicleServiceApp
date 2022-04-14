@@ -5,12 +5,9 @@
 <html>
 <head>
       <title>Restore password</title>
-      <link href="resources/css/mainPageStyle.css" rel="stylesheet"> 
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> 
 </head>
 <body>
-<!-- temporary. Delete  before deploy to Heroku-->
-<h1>In restore-password page</h1>
-<!--  -->
+<h2 style="text-align: center;">If you have forgotten your password</h2>
+<h3 style="text-align: center;">Write your login and email below and click button "Get password"</h3>
 </body>
 </html>
