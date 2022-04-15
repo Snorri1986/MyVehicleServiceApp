@@ -11,13 +11,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class PasswordRequestModel {
 
 	private String login;
+	private String email;
 
 	public PasswordRequestModel() {
 
 	}
 
-	public PasswordRequestModel(String login) {
+	public PasswordRequestModel(String login, String email) {
 		this.login = login;
+		this.email = email;
 	}
 
 	/**
@@ -44,6 +46,29 @@ public class PasswordRequestModel {
 	}
 
 	/**
+	 * Description: email getter
+	 *
+	 * @author Denys Shabelnyk
+	 * @return String value of email variable
+	 * @since w0.10a1.4d1.3m0.0
+	 */
+	@JsonProperty("email")
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * Description: email setter
+	 *
+	 * @author Denys Shabelnyk
+	 * @param email gets from internal JSON request
+	 * @since w0.10a1.4d1.3m0.0
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/**
 	 * Description: simple toString() method in default implementation
 	 *
 	 * @author Denys Shabelnyk
@@ -51,6 +76,6 @@ public class PasswordRequestModel {
 	 */
 	@Override
 	public String toString() {
-		return "PasswordRequestModel [login=" + login + "]";
+		return "PasswordRequestModel [login=" + login + ", email=" + email + "]";
 	}
 }
