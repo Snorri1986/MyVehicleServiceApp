@@ -10,6 +10,9 @@ import java.util.Base64;
  */
 public class Utils {
 
+	public static final String positiveAnswer = "0";
+	public static final String negativeAnswer = "-1";
+
 	/**
 	 * Description: The method hashing string value and returns it on base64
 	 *
@@ -20,5 +23,4 @@ public class Utils {
 	public static String getBase64HashPhrase(String valueToEncoded) {
 		return Base64.getEncoder().encodeToString(valueToEncoded.getBytes());
 	}
-
 }

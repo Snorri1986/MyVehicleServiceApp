@@ -1,7 +1,5 @@
 package models;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * Description: The password response model class in restore password process
  *
@@ -10,37 +8,36 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class PasswordResponseModel {
 
-	private String hash;
+	private Integer code;
 
 	public PasswordResponseModel() {
 
 	}
 
-	public PasswordResponseModel(String hash) {
-		this.hash = hash;
+	public PasswordResponseModel(Integer code) {
+		this.code = code;
 	}
 
 	/**
-	 * Description: hash getter
+	 * Description: code getter
 	 *
 	 * @author Denys Shabelnyk
-	 * @return String value of hash variable
+	 * @return Integer value of login variable
 	 * @since w0.10a1.4d1.3m0.0
 	 */
-	@JsonProperty("hash")
-	public String getHash() {
-		return hash;
+	public Integer getCode() {
+		return code;
 	}
 
 	/**
-	 * Description: hash setter
+	 * Description: code getter
 	 *
 	 * @author Denys Shabelnyk
-	 * @param hash gets from internal JSON request
+	 * @param code value of login variable
 	 * @since w0.10a1.4d1.3m0.0
 	 */
-	public void setHash(String hash) {
-		this.hash = hash;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	/**
@@ -51,7 +48,7 @@ public class PasswordResponseModel {
 	 */
 	@Override
 	public String toString() {
-		return "PasswordResponseModel [hash=" + hash + "]";
+		return "PasswordResponseModel [code=" + code + "]";
 	}
 
 }
