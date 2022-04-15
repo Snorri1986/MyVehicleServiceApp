@@ -13,6 +13,11 @@ text-align: center;
 #resetPasswordForm {
     display: inline-block;
 }
+
+#returnToHome {
+    margin: 0 auto;
+    width:250px;
+}
 </style>
 <script type="text/javascript">
       function validateResetPasswordForm() {
@@ -53,5 +58,10 @@ text-align: center;
             </tr>
          </table>
     </form:form>
+    
+    <form:form method="GET" id="returnToHome" action="../main">
+         <input type="submit" value="Back to main page"/>
+    </form:form>
+  
 </body>
 </html>
