@@ -25,7 +25,9 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import controllers.UserRegistrationController;
+import models.Mail;
 import repository.DataBaseBridge;
+import services.MailService;
 
 /**
  * Description: The main class. Extends SpringBootServletInitializer
@@ -35,7 +37,8 @@ import repository.DataBaseBridge;
  */
 @SpringBootApplication
 @Configuration
-@ComponentScan(basePackageClasses = { UserRegistrationController.class, DataBaseBridge.class })
+@ComponentScan(basePackageClasses = { UserRegistrationController.class, DataBaseBridge.class, Mail.class,
+		MailService.class, MailConfiguration.class })
 @EnableJpaRepositories(basePackages = "repository")
 @EnableAutoConfiguration(exclude = { HibernateJpaAutoConfiguration.class,
 		DataSourceTransactionManagerAutoConfiguration.class })
@@ -188,5 +191,4 @@ public class WsMvsLoginApplication extends SpringBootServletInitializer {
 
 		return factoryBean;
 	}
-
 }

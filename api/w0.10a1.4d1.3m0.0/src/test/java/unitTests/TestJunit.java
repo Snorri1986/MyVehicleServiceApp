@@ -41,7 +41,7 @@ public class TestJunit {
 
 		WsMvsLoginApplication wsmvsloginapp = new WsMvsLoginApplication();
 
-		String uri = "uri";
+		String uri = "<uri>";
 
 		URI dbUri = null;
 		try {

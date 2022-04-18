@@ -71,6 +71,7 @@ public class PasswordRequestModel {
 	/**
 	 * Description: simple toString() method in default implementation
 	 *
+	 * @return String - string view of instance
 	 * @author Denys Shabelnyk
 	 * @since w0.10a1.4d1.3m0.0
 	 */

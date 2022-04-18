@@ -17,9 +17,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import main.Utils;
 import models.LoginRequestModel;
 import models.LoginResponseModel;
+import models.Mail;
 import models.PasswordRequestModel;
 import models.PasswordResponseModel;
 import repository.DataBaseBridge;
+import services.MailService;
 
 /**
  * Description: The controller class for login proccess Request example: {
@@ -36,6 +38,9 @@ public class UserAuthorizationController {
 
 	@Autowired
 	DataBaseBridge dbBridge;
+
+	@Autowired
+	MailService mailService;
 
 	/**
 	 * Description: method for handling authorization requests Last modify on v1.0:
@@ -78,26 +83,35 @@ public class UserAuthorizationController {
 	 * @author Denys Shabelnyk
 	 * @param passwordRequestModel - a request which written by JSON and send from
 	 *                             outside form
-	 * @return PasswordResponseModel - a response which returns hash of password
-	 * @throws JsonMappingException    - error while field mappings
-	 * @throws JsonProcessingException - error while JSON parsing
+	 * @return PasswordResponseModel - a response of request. 0 - hash password sent
+	 *         by email, -1 - didn't sent.
+	 * @throws Exception - need for sending email with password hash
 	 * @since w0.10a1.4d1.3m0.0
 	 */
 	// @RequestBody - maybe not working on Heroku or from mvs-web
 	@PostMapping("/restore-password")
 	public @ResponseBody PasswordResponseModel getSubscriberPassHash(
-			@RequestBody final PasswordRequestModel passwordRequestModel)
-			throws JsonMappingException, JsonProcessingException {
+			@RequestBody final PasswordRequestModel passwordRequestModel) throws Exception {
 		PasswordResponseModel passwordResponseModel = null;
 		String answer;
+		String usrEmail;
 
 		logger.info("Incoming password restore request(info): {}", passwordRequestModel.toString());
 
 		answer = dbBridge.getCurrentUsrPassHash(passwordRequestModel.getLogin());
+		usrEmail = passwordRequestModel.getEmail();
 
 		if (!answer.equalsIgnoreCase("None")) {
 			ObjectMapper regResult = new ObjectMapper();
 			passwordResponseModel = regResult.readValue(Utils.positiveAnswer, PasswordResponseModel.class);
+
+			Mail mail = new Mail();
+			mail.setMailFrom("msvamailsender@gmail.com");
+			mail.setMailTo(usrEmail);
+			mail.setMailSubject("Subcriber's pass hash mail");
+			mail.setMailContent("Your password hash is: " + answer);
+			mailService.sendEmail(mail);
+
 		} else {
 			ObjectMapper regResult = new ObjectMapper();
 			passwordResponseModel = regResult.readValue(Utils.negativeAnswer, PasswordResponseModel.class);
