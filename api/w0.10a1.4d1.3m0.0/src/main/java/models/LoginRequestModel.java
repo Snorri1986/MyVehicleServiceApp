@@ -1,5 +1,8 @@
 package models;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -10,7 +13,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class LoginRequestModel {
 
+	@NotNull
+	@Pattern(regexp = "/^[a-zA-Z]+$/")
 	private String username;
+	@NotNull
 	private String password;
 
 	public LoginRequestModel() {
