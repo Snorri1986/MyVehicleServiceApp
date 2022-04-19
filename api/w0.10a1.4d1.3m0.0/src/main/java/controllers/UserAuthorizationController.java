@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -88,10 +87,9 @@ public class UserAuthorizationController {
 	 * @throws Exception - need for sending email with password hash
 	 * @since w0.10a1.4d1.3m0.0
 	 */
-	// @RequestBody - maybe not working on Heroku or from mvs-web
 	@PostMapping("/restore-password")
-	public @ResponseBody PasswordResponseModel getSubscriberPassHash(
-			@RequestBody final PasswordRequestModel passwordRequestModel) throws Exception {
+	public @ResponseBody PasswordResponseModel getSubscriberPassHash(final PasswordRequestModel passwordRequestModel)
+			throws Exception {
 		PasswordResponseModel passwordResponseModel = null;
 		String answer;
 		String usrEmail;
