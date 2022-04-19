@@ -36,13 +36,9 @@ text-align: center;
     		return false;
     	}
     	
-    	//check email
-    	// temporary disable before task # 51
-    	/*if(!(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(login))) {
-    		alert("Email incorrect. Need check");
-    		return false;
-    	}*/
-     }
+    	mailSendConfirmation();
+    	
+      }
       
       function mailSendConfirmation() {
   		 alert("Mail was sent. Contact to system owner"); 
@@ -60,7 +56,7 @@ text-align: center;
                 <td><input type="text" id="labelLogin" name="login" /></td>
                 <td><label for="labelEmail">email:</label></td>
                 <td><input type="text" id="labelEmail" name="email" /></td>
-                <td><input type="submit" value="Get Password" onclick="mailSendConfirmation()" /></td> 
+                <td><input type="submit" value="Get Password" /></td> 
             </tr>
          </table>
     </form:form>
