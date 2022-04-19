@@ -17,8 +17,8 @@ started from v0.5<br>
 <b>v1.1</b> is available. Added simple logging for /register endpoint.<br>
 <b>v1.2</b> is available. Minor change for integration ws-mvs-login and mvs-web<br>
 <b>v1.3</b> is available. Added loggin for /login and improve loggin process for /register.<br>
-<b>w0.10a1.4d1.3m0.0</b> is available. Added new endpoint /restore-password to ws-mvs-login web-service
-Minor change for integration ws-mvs-login and mvs-web in auth process.
+<b>w0.10a1.4d1.3m0.0</b> is available. Added new endpoint /restore-password to ws-mvs-login web-service.Minor change for integration ws-mvs-login and mvs-web in auth process.
+
 # web 
 <b>v0.1</b> is available. First initialization and use SpringMVC on project.<br>
 <b>v0.2</b> is available. Added simple css.<br>
