@@ -16,7 +16,8 @@ started from v0.5<br>
 <b>v1.0</b> is available. Added encryption for subscriber's credentials. API for login and register process ready to use in production.<br>
 <b>v1.1</b> is available. Added simple logging for /register endpoint.<br>
 <b>v1.2</b> is available. Minor change for integration ws-mvs-login and mvs-web<br>
-<b>v1.3</b> is available. Added loggin for /login and improve loggin process for /register.
+<b>v1.3</b> is available. Added loggin for /login and improve loggin process for /register.<br>
+<b>w0.10a1.4d1.3m0.0</b> is available. Added new endpoint /restore-password to ws-mvs-login web-service
 Minor change for integration ws-mvs-login and mvs-web in auth process.
 # web 
 <b>v0.1</b> is available. First initialization and use SpringMVC on project.<br>
@@ -31,9 +32,11 @@ Minor change for integration ws-mvs-login and mvs-web in auth process.
 <b>v0.6.3</b> is available. Updated logging.<br>
 <b>v0.7</b> is available. Improved CSS and navigation between pages.<br>
 <b>v0.8</b> is available. Added form validator before send request to ws-mvs-login.<br>
-<b>w0.9a1.3d1.2m0.0</b> is available. Fixed minor errors.
+<b>w0.9a1.3d1.2m0.0</b> is available. Fixed minor errors.<br>
+<b>w0.10a1.4d1.3m0.0</b> is available. Added restore password functionality using Mailtrap service.
 # db
-<b>v1.2</b> is available. Fix idle bug in register process and added changing value about lastlogindate.
+<b>v1.2</b> is available. Fix idle bug in register process and added changing value about lastlogindate.<br>
+<b>w0.10a1.4d1.3m0.0</b> is available. Added new function to find subscriber's password hash.
 # mobile
 # About version of application.
 From next revision I decided to change version history in the project.<br>
