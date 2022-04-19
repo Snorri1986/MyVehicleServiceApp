@@ -42,7 +42,12 @@ text-align: center;
     		alert("Email incorrect. Need check");
     		return false;
     	}*/
+     }
+      
+      function mailSendConfirmation() {
+  		 alert("Mail was sent. Contact to system owner"); 
       }
+  	  
     </script>
 </head>
 <body>
@@ -55,7 +60,7 @@ text-align: center;
                 <td><input type="text" id="labelLogin" name="login" /></td>
                 <td><label for="labelEmail">email:</label></td>
                 <td><input type="text" id="labelEmail" name="email" /></td>
-                <td><input type="submit" value="Get Password" /></td>
+                <td><input type="submit" value="Get Password" onclick="mailSendConfirmation()" /></td> 
             </tr>
          </table>
     </form:form>
