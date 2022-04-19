@@ -37,17 +37,18 @@ text-align: center;
     	}
     	
     	//check email
-    	if(!(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(login))) {
+    	// temporary disable before task # 51
+    	/*if(!(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(login))) {
     		alert("Email incorrect. Need check");
     		return false;
-    	}
+    	}*/
       }
     </script>
 </head>
 <body>
 <h2 style="text-align: center;">If you have forgotten your password</h2>
 <h3 style="text-align: center;">Write your login and email below and click button "Get password"</h3>
-    <form:form method="POST" id="resetPasswordForm" action="#" onsubmit="return validateResetPasswordForm()"> 
+    <form:form method="POST" id="resetPasswordForm" action="/mvs-web/main/restore-password" onsubmit="return validateResetPasswordForm()"> 
          <table>
             <tr>
                 <td><label for="labelLogin">login:</label></td>
