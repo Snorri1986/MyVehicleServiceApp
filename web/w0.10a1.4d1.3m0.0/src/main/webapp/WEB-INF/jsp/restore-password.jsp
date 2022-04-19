@@ -53,7 +53,7 @@ text-align: center;
 <body>
 <h2 style="text-align: center;">If you have forgotten your password</h2>
 <h3 style="text-align: center;">Write your login and email below and click button "Get password"</h3>
-    <form:form method="POST" id="resetPasswordForm" action="/mvs-web/main/restore-password" onsubmit="return validateResetPasswordForm()"> 
+    <form:form method="POST" id="resetPasswordForm" action="restore-password" onsubmit="return validateResetPasswordForm()"> 
          <table>
             <tr>
                 <td><label for="labelLogin">login:</label></td>
