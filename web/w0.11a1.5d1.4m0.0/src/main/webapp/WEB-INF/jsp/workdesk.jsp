@@ -4,18 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- need for responsive functionality -->
+<meta name="viewport" content="width = device-width, initial-scale = 1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 <title>WorkDesk</title>
-<style>
-#back_main {
-position: absolute;
-right: 0;
-}
-</style>
 </head>
 <body onload="alert('Authorization was successful')"> 
 <h2 style="text-align: center;">Welcome on workdesk!</h2>
-<form:form id="back_main" method="GET" action="../main">
-<input type="submit" value="Back to main page"/>
-</form:form>
+<div class = "btn-group">
+    <a class="btn btn-large btn-info mr-1" href="../main">Back to main page</a>
+    <a class="btn btn-large btn-info mr-1" href="#">Change my password</a>
+</div>
 </body>
 </html>
