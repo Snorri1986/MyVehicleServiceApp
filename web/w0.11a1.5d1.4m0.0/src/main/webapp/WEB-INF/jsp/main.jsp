@@ -7,7 +7,11 @@
       <title>Welcome</title>
       <link href="resources/css/mainPageStyle.css" rel="stylesheet"> 
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        
+   <!-- need for responsive functionality -->
+   <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" 
+   integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+   
    <script type="text/javascript">
       function validateAuthForm() {
     	  
@@ -66,9 +70,11 @@
    </head>
    <body>
    
-      <h2 style="text-align:center">Welcome on MyServiceVehicleApplication web page</h2>
-          <div class="dividline">
+      <div class="container text-center">
+          <h2>Welcome on MyServiceVehicleApplication web page</h2>
       </div>
+      
+      <div class="dividline"></div>
      
       <div id="authHeader">
           <h2 style="text-align:center">Log In:</h2>
@@ -91,7 +97,7 @@
             </tr>
             
             <tr>
-                <td><input type="submit" value="Submit" style="margin-left: 90px;"/></td>
+                <td><input class="btn btn-primary" type="submit" value="Submit" style="margin-left: 100px;"></td>
             </tr>
          </table>
       </form:form>
@@ -119,7 +125,7 @@
             </tr>
             
             <tr>
-                <td><input type="submit" value="Submit" style="margin-left: 90px;"/></td>
+                <td><input class="btn btn-primary" type="submit" value="Submit" style="margin-left: 105px;"></td>
             </tr>
          </table>
       </form:form>
