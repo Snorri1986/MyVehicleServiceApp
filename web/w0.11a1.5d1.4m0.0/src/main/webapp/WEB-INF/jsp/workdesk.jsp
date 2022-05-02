@@ -11,7 +11,7 @@
 <h2 style="text-align: center;">Welcome on workdesk!</h2>
 <div class = "btn-group">
     <a class="btn btn-large btn-info mr-1" href="../main">Back to main page</a>
-    <a class="btn btn-large btn-info mr-1" href="#">Change my password</a>
+    <a class="btn btn-large btn-info mr-1" href="../main/change-password">Change my password</a>
 </div>
 </body>
 </html>
