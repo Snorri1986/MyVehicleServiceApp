@@ -12,6 +12,25 @@
    <h2>Fill the form below and push "Send" button</h2>
 </div>
 <!--  -->
+<!-- need test task 52.5 -->
+<form method="POST" id="changePasswordForm" action="change-password">
+  <div class="form-group col-md-4">
+    <input type="password" class="form-control" id="oldPwd" aria-describedby="oldPwdHlp" placeholder="Enter Old Password">
+    <small id="oldPwdHlp" class="form-text text-muted">Write here old password</small>
+  </div>
+  <div class="form-group col-md-4">
+    <input type="password" class="form-control" id="newPwd" aria-describedby="newPwdHlp" placeholder="New Password">
+    <small id="newPwdHlp" class="form-text text-muted">Write here new password</small>
+  </div>
+  <div class="form-group col-md-4">
+    <input type="password" class="form-control" id="confirmNewPwd" aria-describedby="newPwdConfirm" placeholder="Confirm New Password">
+    <small id="newPwdConfirm" class="form-text text-muted">Confirm new password</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Send</button>
+</form>
+<button class="btn btn-primary">Cancel</button>
+<a class="btn btn-primary" href="../main">Back to main page</a>
+<!--  -->
 <body>
 </body>
 </html>
