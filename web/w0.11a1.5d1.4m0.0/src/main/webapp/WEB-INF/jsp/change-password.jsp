@@ -23,6 +23,12 @@ function validateChangePasswordFields() {
          return false;
    }
 }
+
+function clearChangePasswordFormFields() {
+	 document.getElementById("oldPwd").value = "";
+	 document.getElementById("newPwd").value = "";
+	 document.getElementById("confirmNewPwd").value = "";
+}
 </script>
 </head>
 <body>
@@ -46,7 +52,7 @@ function validateChangePasswordFields() {
   </div>
   <button type="submit" class="btn btn-primary">Send</button>
 </form>
-<button class="btn btn-primary">Cancel</button>
+<button class="btn btn-primary" onclick="clearChangePasswordFormFields()">Cancel</button>
 <a class="btn btn-primary" href="../main">Back to main page</a>
 </body>
 </html>
