@@ -52,7 +52,7 @@ text-align: center;
                <input type="text" class="form-control" id="labelLogin" name="login" placeholder="Login">
             </div>
             <div class="form-group col-md-4">
-               <input type="text" class="form-control" id="labelEmail" name="email" placeholder="Email with @">
+               <input type="email" class="form-control" id="labelEmail" name="email" placeholder="Email with @">
             </div>
         </div>
         <button type="submit" class="btn btn-large btn-info">Get Password</button>
