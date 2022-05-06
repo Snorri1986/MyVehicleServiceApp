@@ -88,4 +88,19 @@ public class DataBaseBridge {
 		hashPassword = (String) query.getOutputParameterValue("v_result");
 		return hashPassword;
 	}
+
+	public Integer changeSubscriberPassword(String usrLoginFromFront, String oldPassword, String newPassword) {
+		Integer result;
+		StoredProcedureQuery query = entityManager.createStoredProcedureQuery("auth.ch_subpassword")
+				.registerStoredProcedureParameter("i_login", String.class, ParameterMode.IN)
+				.registerStoredProcedureParameter("i_oldpassword", String.class, ParameterMode.IN)
+				.registerStoredProcedureParameter("i_newpassword", String.class, ParameterMode.IN)
+				.registerStoredProcedureParameter("v_result", Integer.class, ParameterMode.OUT)
+				.setParameter("i_login", usrLoginFromFront).setParameter("i_oldpassword", oldPassword)
+				.setParameter("i_newpassword", newPassword);
+		query.execute();
+		result = (Integer) query.getOutputParameterValue("v_result");
+		return result;
+	}
+
 }
