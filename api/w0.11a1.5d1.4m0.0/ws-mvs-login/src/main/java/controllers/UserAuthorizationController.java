@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import main.Utils;
+import models.ChPasswordRequestModel;
+import models.ChPasswordResponseModel;
 import models.LoginRequestModel;
 import models.LoginResponseModel;
 import models.Mail;
@@ -119,4 +122,28 @@ public class UserAuthorizationController {
 
 		return passwordResponseModel;
 	}
+
+	// @RequestBody - delete before implement into Heroku
+	@PostMapping("/change-password")
+	public @ResponseBody ChPasswordResponseModel doChangePasswordRequest(
+			@RequestBody ChPasswordRequestModel chPasswordRequestModel) throws Exception {
+		ChPasswordResponseModel chPasswordResponseModel = null;
+		Integer answer;
+
+		logger.info("Incoming password changing request(info): {}", chPasswordRequestModel.toString());
+
+		answer = dbBridge.changeSubscriberPassword(chPasswordRequestModel.getLogin(),
+				Utils.getBase64HashPhrase(chPasswordRequestModel.getOldPassword()),
+				Utils.getBase64HashPhrase(chPasswordRequestModel.getNewPassword()));
+
+		String resultInString = String.valueOf(answer);
+
+		ObjectMapper regResult = new ObjectMapper();
+		chPasswordResponseModel = regResult.readValue(resultInString, ChPasswordResponseModel.class);
+
+		logger.info("Change password response (info): {}", chPasswordResponseModel.toString());
+
+		return chPasswordResponseModel;
+	}
+
 }

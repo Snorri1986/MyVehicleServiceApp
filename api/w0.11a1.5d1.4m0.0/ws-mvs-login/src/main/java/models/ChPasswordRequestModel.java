@@ -1,5 +1,7 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ChPasswordRequestModel {
 	private String login;
 	private String oldPassword;
@@ -16,6 +18,7 @@ public class ChPasswordRequestModel {
 		this.newPassword = newPassword;
 	}
 
+	@JsonProperty("login")
 	public String getLogin() {
 		return login;
 	}
@@ -24,6 +27,7 @@ public class ChPasswordRequestModel {
 		this.login = login;
 	}
 
+	@JsonProperty("oldpass")
 	public String getOldPassword() {
 		return oldPassword;
 	}
@@ -32,6 +36,7 @@ public class ChPasswordRequestModel {
 		this.oldPassword = oldPassword;
 	}
 
+	@JsonProperty("newpass")
 	public String getNewPassword() {
 		return newPassword;
 	}
