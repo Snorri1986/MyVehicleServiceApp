@@ -35,7 +35,8 @@ if v_password_change_count > 0 then
  update auth.subscribersmodes 
     set subid = v_subcriber_id,
         password = password + 1,
-        passwordlasttime = current_timestamp;
+        passwordlasttime = current_timestamp
+    where subid = v_subcriber_id;
 else 
   insert into auth.subscribersmodes(id,subid,password,firstname,lastname,passwordlasttime,fnamelasttime,lnamelasttime)
 		values (nextval('auth.seq_subscribersmodes_id'),v_subcriber_id,1,0,0,current_timestamp,null,null);
