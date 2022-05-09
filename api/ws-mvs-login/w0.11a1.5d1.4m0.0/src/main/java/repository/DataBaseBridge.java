@@ -89,6 +89,16 @@ public class DataBaseBridge {
 		return hashPassword;
 	}
 
+	/**
+	 * Description: method for handling change password process
+	 *
+	 * @author Denys Shabelnyk
+	 * @since w0.11a1.5d1.4m0.0
+	 * @param usrLoginFromFront - login of user
+	 * @param oldPassword       - subscriber's old password
+	 * @param newPassword       - subscriber's new password
+	 * @return Intere - 0 - successfully changed password, -1 - failure.
+	 */
 	public Integer changeSubscriberPassword(String usrLoginFromFront, String oldPassword, String newPassword) {
 		Integer result;
 		StoredProcedureQuery query = entityManager.createStoredProcedureQuery("auth.ch_subpassword")

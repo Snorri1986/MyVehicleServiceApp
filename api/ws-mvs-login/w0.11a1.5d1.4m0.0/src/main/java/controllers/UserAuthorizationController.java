@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -124,9 +123,20 @@ public class UserAuthorizationController {
 	}
 
 	// @RequestBody - delete before implement into Heroku
+	/**
+	 * Description: method for handling changing password request
+	 *
+	 * @author Denys Shabelnyk
+	 * @param chPasswordRequestModel - a request which written by JSON and send from
+	 *                               outside form
+	 * @return ChPasswordResponseModel - a response of request. 0 - success, -1 -
+	 *         failure.
+	 * @throws Exception - need for sending email with password hash
+	 * @since w0.11a1.5d1.4m0.0
+	 */
 	@PostMapping("/change-password")
-	public @ResponseBody ChPasswordResponseModel doChangePasswordRequest(
-			@RequestBody ChPasswordRequestModel chPasswordRequestModel) throws Exception {
+	public @ResponseBody ChPasswordResponseModel doChangePasswordRequest(ChPasswordRequestModel chPasswordRequestModel)
+			throws Exception {
 		ChPasswordResponseModel chPasswordResponseModel = null;
 		Integer answer;
 
