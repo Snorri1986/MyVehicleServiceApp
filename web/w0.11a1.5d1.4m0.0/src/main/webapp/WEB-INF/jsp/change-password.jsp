@@ -29,15 +29,24 @@ function clearChangePasswordFormFields() {
 	 document.getElementById("newPwd").value = "";
 	 document.getElementById("confirmNewPwd").value = "";
 }
+
+function setSubscriberLogin() {
+	 document.getElementById("lgn").value = sessionStorage.getItem('usrLogin');
+}
+
 </script>
 </head>
-<body>
+<body onload="setSubscriberLogin()"> 
 
 <div class="container text-center">
    <h2>Fill the form below and push "Send" button</h2>
 </div>
 
 <form method="POST" id="changePasswordForm" action="change-password" onsubmit="return validateChangePasswordFields()">
+   <div class="form-group col-md-4">
+    <input type="text" class="form-control" id="lgn" aria-describedby="lgnDesc" placeholder="Login" readonly>
+    <small id="lgnDesc" class="form-text text-muted">Your login. Not editable field.</small>
+  </div>
   <div class="form-group col-md-4">
     <input type="password" class="form-control" id="oldPwd" aria-describedby="oldPwdHlp" placeholder="Enter Old Password">
     <small id="oldPwdHlp" class="form-text text-muted">Write here old password</small>

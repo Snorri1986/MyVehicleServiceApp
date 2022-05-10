@@ -33,6 +33,9 @@
     		alert("Login only with Latin letters");
     		return false;
     	}
+    	
+    	saveSubscriberLogin();
+    	
       }
       
       
@@ -66,7 +69,11 @@
       	
      }
       
-    </script>
+     function saveSubscriberLogin() {
+    	  sessionStorage.setItem('usrLogin',document.getElementById("loginAuth").value);
+     }
+      
+   </script>
    </head>
    <body>
    
