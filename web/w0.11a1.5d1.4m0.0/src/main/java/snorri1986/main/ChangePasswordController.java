@@ -12,5 +12,4 @@ public class ChangePasswordController {
 	public String showChangePasswordWebPage() {
 		return "change-password";
 	}
-
 }

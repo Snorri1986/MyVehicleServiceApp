@@ -42,7 +42,8 @@ function setSubscriberLogin() {
    <h2>Fill the form below and push "Send" button</h2>
 </div>
 
-<form method="POST" id="changePasswordForm" action="change-password" onsubmit="return validateChangePasswordFields()">
+
+<form method="POST" id="changePasswordForm" action="change-password-send" onsubmit="return validateChangePasswordFields()"> 
    <div class="form-group col-md-4">
     <input type="text" class="form-control" id="lgn" aria-describedby="lgnDesc" placeholder="Login" readonly>
     <small id="lgnDesc" class="form-text text-muted">Your login. Not editable field.</small>
@@ -61,6 +62,7 @@ function setSubscriberLogin() {
   </div>
   <button type="submit" class="btn btn-primary">Send</button>
 </form>
+
 <button class="btn btn-primary" onclick="clearChangePasswordFormFields()">Cancel</button>
 <a class="btn btn-primary" href="../main">Back to main page</a>
 </body>
