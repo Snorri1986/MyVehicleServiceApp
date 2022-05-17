@@ -14,11 +14,10 @@ public class ChPasswordRequestModel {
 	private String newPassword;
 
 	public ChPasswordRequestModel() {
-		super();
+
 	}
 
 	public ChPasswordRequestModel(String login, String oldPassword, String newPassword) {
-		super();
 		this.login = login;
 		this.oldPassword = oldPassword;
 		this.newPassword = newPassword;
