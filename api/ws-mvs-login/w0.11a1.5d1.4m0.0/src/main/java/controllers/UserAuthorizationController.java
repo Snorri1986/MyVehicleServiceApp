@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -136,8 +135,9 @@ public class UserAuthorizationController {
 	 * @since w0.11a1.5d1.4m0.0
 	 */
 	@PostMapping("/change-password-send")
-	public @ResponseBody ChPasswordResponseModel doChangePasswordRequest(
-			@RequestBody ChPasswordRequestModel chPasswordRequestModel) throws Exception {
+	public @ResponseBody ChPasswordResponseModel doChangePasswordRequest(ChPasswordRequestModel chPasswordRequestModel)
+
+			throws Exception {
 		ChPasswordResponseModel chPasswordResponseModel = null;
 		Integer answer;
 
