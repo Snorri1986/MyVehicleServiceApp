@@ -28,6 +28,7 @@ public class ChangePasswordSendController {
 	 * @return String - move to main page
 	 * @since w0.11a1.5d1.4m0.0
 	 */
+	// TODO: find another solutions
 	@RequestMapping(method = RequestMethod.POST)
 	public String doChangePassword(@RequestBody MultiValueMap<String, String[]> formData) {
 
@@ -44,7 +45,7 @@ public class ChangePasswordSendController {
 		responseBody = response.getBody().getCode();
 
 		if (responseBody == SuccessAnswer)
-			return "main";
+			return "workdesk";
 
 		return "change-password";
 
