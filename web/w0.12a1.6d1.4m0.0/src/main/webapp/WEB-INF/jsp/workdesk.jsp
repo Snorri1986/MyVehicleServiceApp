@@ -26,5 +26,13 @@
 
 <div class="dividline"></div>
 
+<div class = "btn-group" id="lstVehicles">
+    <a class="btn btn-large btn-info mr-1" href="#">Vehicle 1</a>
+    <a class="btn btn-large btn-info mr-1" href="#">Vehicle 2</a>
+    <a class="btn btn-large btn-info mr-1" href="#">Vehicle 3</a>
+    <a class="btn btn-large btn-info mr-1" href="#">Vehicle 4</a>
+    <a class="btn btn-large btn-info mr-1" href="#">Vehicle 5</a>
+</div>
+
 </body>
 </html>
