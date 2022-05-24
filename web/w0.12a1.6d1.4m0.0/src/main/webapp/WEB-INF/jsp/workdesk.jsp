@@ -15,10 +15,21 @@
    line-height: 0.1em;
    margin: 10px 0 20px; 
 } 
+
+/* ready to commit task 63.3 */
+#vehicleInfo {
+padding-top: 20px;
+}
+/**/
 </style>
+<script type="text/javascript">
+function getSubscriberLogin() {
+	document.getElementById("subLogin").innerHTML = sessionStorage.getItem('usrLogin');
+}
+</script>
 </head>
-<body onload="alert('Authorization was successful')"> 
-<h2 style="text-align: center;">Welcome on workdesk!</h2>
+<body onload="alert('Authorization was successful'),getSubscriberLogin()"> 
+<h2 style="text-align: center;">Welcome on workdesk!<div id="subLogin"></div></h2> 
 <div class = "btn-group">
     <a class="btn btn-large btn-info mr-1" href="../main">Back to main page</a>
     <a class="btn btn-large btn-info mr-1" href="../main/change-password">Change my password</a>
@@ -32,6 +43,14 @@
     <a class="btn btn-large btn-info mr-1" href="#">Vehicle 3</a>
     <a class="btn btn-large btn-info mr-1" href="#">Vehicle 4</a>
     <a class="btn btn-large btn-info mr-1" href="#">Vehicle 5</a>
+</div>
+
+<div id="vehicleInfo">
+<p>Brand: <div id="brand"></div></p>
+<p>Model: <div id="model"></div></p>
+<p>Date of manufacture: <div id="dateOfMunuf"></div></p>
+<p>Total mileage: <div id="lstMileage"></div></p>
+<p>Last service check: <div id="lstServiceChk"></div></p>
 </div>
 
 </body>
