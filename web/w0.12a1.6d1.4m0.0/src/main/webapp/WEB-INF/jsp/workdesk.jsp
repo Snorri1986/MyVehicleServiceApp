@@ -33,6 +33,9 @@ function getSubscriberLogin() {
 <div class = "btn-group">
     <a class="btn btn-large btn-info mr-1" href="../main">Back to main page</a>
     <a class="btn btn-large btn-info mr-1" href="../main/change-password">Change my password</a>
+    <a class="btn btn-large btn-info mr-1" href="#">Add new mileage</a>
+    <a class="btn btn-large btn-info mr-1" href="#">Add new service request</a>
+    <a class="btn btn-large btn-info mr-1" href="#">New service report in PDF</a>
 </div>
 
 <div class="dividline"></div>
