@@ -37,7 +37,7 @@ started from v0.5<br>
 <b>w0.9a1.3d1.2m0.0</b> is available. Fixed minor errors.<br>
 <b>w0.10a1.4d1.3m0.0</b> is available. Added restore password functionality using Mailtrap service.<br>
 <b>w0.11a1.5d1.4m0.0</b> is available. Added new user's functionality -> change password after logged in and changed web-design using Bootstrap.<br>
-<b>w0.12a1.6d1.4m0.0</b> is done. Was add new web elements for new functionality which depended with vehicles and their features.
+<b>w0.12a1.6d1.4m0.0</b> is done. Was add new web elements for new functionality which depend with vehicles and their features.
 # db
 <b>v1.2</b> is available. Fix idle bug in register process and added changing value about lastlogindate.<br>
 <b>w0.10a1.4d1.3m0.0</b> is available. Added new function to find subscriber's password hash.<br>
