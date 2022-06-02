@@ -18,7 +18,8 @@ started from v0.5<br>
 <b>v1.2</b> is available. Minor change for integration ws-mvs-login and mvs-web<br>
 <b>v1.3</b> is available. Added loggin for /login and improve loggin process for /register.<br>
 <b>w0.10a1.4d1.3m0.0</b> is available. Added new endpoint /restore-password to ws-mvs-login web-service.Minor change for integration ws-mvs-login and mvs-web in auth process.<br>
-<b>w0.11a1.5d1.4m0.0</b> is available.Added new endpoint /change-password-send to ws-mvs-login web-service. It is main ability to change its password after logged in.
+<b>w0.11a1.5d1.4m0.0</b> is available.Added new endpoint /change-password-send to ws-mvs-login web-service. It is main ability to change its password after logged in.<br>
+<b>w0.12a1.6d1.4m0.0</b> is done. Was initialized new web-service -> ws-mvs-vehicle.
 
 # web 
 <b>v0.1</b> is available. First initialization and use SpringMVC on project.<br>
@@ -35,7 +36,8 @@ started from v0.5<br>
 <b>v0.8</b> is available. Added form validator before send request to ws-mvs-login.<br>
 <b>w0.9a1.3d1.2m0.0</b> is available. Fixed minor errors.<br>
 <b>w0.10a1.4d1.3m0.0</b> is available. Added restore password functionality using Mailtrap service.<br>
-<b>w0.11a1.5d1.4m0.0</b> is available. Added new user's functionality -> change password after logged in and changed web-design using Bootstrap.
+<b>w0.11a1.5d1.4m0.0</b> is available. Added new user's functionality -> change password after logged in and changed web-design using Bootstrap.<br>
+<b>w0.12a1.6d1.4m0.0</b> is done. Was add new web elements for new functionality which depended with vehicles and their features.
 # db
 <b>v1.2</b> is available. Fix idle bug in register process and added changing value about lastlogindate.<br>
 <b>w0.10a1.4d1.3m0.0</b> is available. Added new function to find subscriber's password hash.<br>
