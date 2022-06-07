@@ -9,14 +9,14 @@ CREATE TABLE subscribers (
 	CONSTRAINT subscribers_pk PRIMARY KEY (id)
 );
 CREATE UNIQUE INDEX subscribers_login_idx ON auth.subscribers (login);
-COMMENT ON TABLE auth.subscribers IS 'Table of users';
+COMMENT ON TABLE subscribers IS 'Table of users';
 
 -- Column comments
 
-COMMENT ON COLUMN auth.subscribers.id IS 'UserID in the table';
-COMMENT ON COLUMN auth.subscribers.login IS 'login of subscribers';
-COMMENT ON COLUMN auth.subscribers."password" IS 'password of subscribers';
-COMMENT ON COLUMN auth.subscribers.firstname IS 'firstname of subscribers';
-COMMENT ON COLUMN auth.subscribers.lastname IS 'lastname of subscribers';
-COMMENT ON COLUMN auth.subscribers."type" IS 'permission by default';
-COMMENT ON COLUMN auth.subscribers.lastlogindate IS 'last succesfully authorization';
+COMMENT ON COLUMN subscribers.id IS 'UserID in the table';
+COMMENT ON COLUMN subscribers.login IS 'login of subscribers';
+COMMENT ON COLUMN subscribers."password" IS 'password of subscribers';
+COMMENT ON COLUMN subscribers.firstname IS 'firstname of subscribers';
+COMMENT ON COLUMN subscribers.lastname IS 'lastname of subscribers';
+COMMENT ON COLUMN subscribers."type" IS 'permission by default';
+COMMENT ON COLUMN subscribers.lastlogindate IS 'last succesfully authorization';

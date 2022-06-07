@@ -11,34 +11,34 @@ v_result int4;
 	BEGIN
 select id,password 
 into v_subcriber_id,v_password_before 
-from auth.subscribers 
+from subscribers 
 where login = i_login;
 
-update auth.subscribers  
+update subscribers  
        set password = i_newpassword
 where login = i_login
 and password = i_oldpassword;
 
 select password  
 into v_password_after 
-from auth.subscribers 
+from subscribers 
 where login = i_login;
 
 if v_password_after <> v_password_before
    then v_result = 0;
 
 select password into v_password_change_count 
-from auth.subscribersmodes
+from subscribersmodes
 where subid = v_subcriber_id;
   
 if v_password_change_count > 0 then
- update auth.subscribersmodes 
+ update subscribersmodes 
     set subid = v_subcriber_id,
         password = password + 1,
         passwordlasttime = current_timestamp
     where subid = v_subcriber_id;
 else 
-  insert into auth.subscribersmodes(id,subid,password,firstname,lastname,passwordlasttime,fnamelasttime,lnamelasttime)
+  insert into subscribersmodes(id,subid,password,firstname,lastname,passwordlasttime,fnamelasttime,lnamelasttime)
 		values (nextval('auth.seq_subscribersmodes_id'),v_subcriber_id,1,0,0,current_timestamp,null,null);
 end if;
 else 
