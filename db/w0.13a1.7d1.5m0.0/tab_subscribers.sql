@@ -1,4 +1,4 @@
-CREATE TABLE auth.subscribers (
+CREATE TABLE subscribers (
 	id bigint NOT NULL,
 	login varchar NOT NULL,
 	"password" varchar NOT NULL,

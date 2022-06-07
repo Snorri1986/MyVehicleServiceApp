@@ -1,4 +1,4 @@
-CREATE TABLE park.usrvehicle (
+CREATE TABLE usrvehicle (
 	id int4 NOT NULL, -- id by sequence
 	subscribid int4 NOT NULL, -- FK of subscribers table
 	vbrand varchar NOT NULL, -- name of vehicle's brand

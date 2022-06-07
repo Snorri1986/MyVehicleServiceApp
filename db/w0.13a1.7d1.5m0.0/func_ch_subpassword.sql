@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION auth.ch_subpassword(i_login character varying, i_oldpassword character varying, i_newpassword character varying)
+CREATE OR REPLACE FUNCTION ch_subpassword(i_login character varying, i_oldpassword character varying, i_newpassword character varying)
  RETURNS integer
  LANGUAGE plpgsql
 AS $function$

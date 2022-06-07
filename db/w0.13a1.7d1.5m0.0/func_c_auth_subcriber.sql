@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION auth.c_auth_subcriber(i_login character varying, i_password character varying)
+CREATE OR REPLACE FUNCTION c_auth_subcriber(i_login character varying, i_password character varying)
  RETURNS integer
  LANGUAGE plpgsql
 AS $function$

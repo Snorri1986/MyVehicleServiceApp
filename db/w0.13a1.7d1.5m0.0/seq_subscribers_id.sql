@@ -1,4 +1,4 @@
-CREATE SEQUENCE auth.seq_subscribers_id
+CREATE SEQUENCE seq_subscribers_id
 START 1
 INCREMENT 1
 MINVALUE 1

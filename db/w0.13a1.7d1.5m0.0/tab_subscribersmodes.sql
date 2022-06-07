@@ -1,4 +1,4 @@
-CREATE TABLE auth.subscribersmodes (
+CREATE TABLE subscribersmodes (
 	id bigint NOT NULL,
 	subid bigint NOT NULL,
 	login int8 NULL DEFAULT 0,

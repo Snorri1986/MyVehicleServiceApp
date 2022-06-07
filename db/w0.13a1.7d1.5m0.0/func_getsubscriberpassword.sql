@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION auth.getsubscriberpassword(i_login character varying)
+CREATE OR REPLACE FUNCTION getsubscriberpassword(i_login character varying)
  RETURNS character varying
  LANGUAGE plpgsql
 AS $function$
