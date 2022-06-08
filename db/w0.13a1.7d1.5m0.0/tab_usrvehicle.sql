@@ -3,7 +3,7 @@ CREATE TABLE usrvehicle (
 	subscribid int4 NOT NULL, -- FK of subscribers table
 	vbrand varchar NOT NULL, -- name of vehicle's brand
 	vmodel varchar NOT NULL, -- name of vehicle model
-	vdateofmanuf date NOT NULL, -- date of manufacture
+	vdateofmanuf int4 NOT NULL, -- date of manufacture
 	vtotalmileage int4 NOT NULL, -- mileage of vehicle
 	vlastservice date NULL, -- Last service check
 	"type" varchar NOT NULL, -- type of a vehicle
