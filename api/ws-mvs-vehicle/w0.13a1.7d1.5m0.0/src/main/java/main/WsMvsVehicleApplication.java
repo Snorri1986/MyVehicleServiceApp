@@ -17,6 +17,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -29,6 +30,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
  * @since w0.12a1.6d1.4m0.0
  */
 @SpringBootApplication
+@ComponentScan({ "repository", "controllers" })
 @Configuration
 @EnableAutoConfiguration(exclude = { HibernateJpaAutoConfiguration.class,
 		DataSourceTransactionManagerAutoConfiguration.class })

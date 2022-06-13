@@ -1,10 +1,10 @@
-// TODO: test this class on Rest Client
 package controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,8 +28,8 @@ public class AddNewVehicleController {
 	@Autowired
 	DbMethods dbMethods;
 
-	@PostMapping("/addNewVehicle")
-	public @ResponseBody AddNewVehicleResponse doAddNewVehicle(AddNewVehicleRequest addNewVehicleRequest)
+	@PostMapping("/add-new-vehicle")
+	public @ResponseBody AddNewVehicleResponse doAddNewVehicle(@RequestBody AddNewVehicleRequest addNewVehicleRequest)
 
 			throws Exception {
 		AddNewVehicleResponse addNewVehicleResponse = null;
@@ -44,13 +44,17 @@ public class AddNewVehicleController {
 
 		String resultInString = String.valueOf(answer);
 
-		ObjectMapper regResult = new ObjectMapper();
-		addNewVehicleResponse = regResult.readValue(resultInString, AddNewVehicleResponse.class);
-
-		logger.info("Add new vehicle response (info): {}", addNewVehicleResponse.toString());
+		if (resultInString == "null") {
+			addNewVehicleResponse = new AddNewVehicleResponse(-1);
+			logger.info("Add new vehicle response (info): {}", addNewVehicleResponse.toString());
+			return addNewVehicleResponse;
+		} else {
+			ObjectMapper regResult = new ObjectMapper();
+			addNewVehicleResponse = regResult.readValue(resultInString, AddNewVehicleResponse.class);
+			logger.info("Add new vehicle response (info): {}", addNewVehicleResponse.toString());
+		}
 
 		return addNewVehicleResponse;
 	}
 
 }
-// ... //

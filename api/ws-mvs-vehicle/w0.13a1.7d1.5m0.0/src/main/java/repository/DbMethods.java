@@ -1,4 +1,3 @@
-// TODO: test this class on Rest Client
 package repository;
 
 import java.util.Date;
@@ -65,4 +64,3 @@ public class DbMethods {
 	}
 
 }
-// ... //

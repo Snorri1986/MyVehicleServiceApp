@@ -2,6 +2,7 @@ package models;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -159,6 +160,7 @@ public class AddNewVehicleRequest {
 	 * @since w0.13a1.7d1.5m0.0
 	 */
 	@JsonProperty("lsrvcheck")
+	@JsonFormat(pattern = "dd.mm.yyyy") // TODO: need test
 	public Date getLastServiceCheck() {
 		return lastServiceCheck;
 	}
