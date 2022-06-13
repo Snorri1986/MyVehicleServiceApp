@@ -1,5 +1,4 @@
-CREATE OR REPLACE FUNCTION c_addnewvehicle(i_usrname character varying, i_brand character varying, i_model character varying, 
-                           i_dmanuf integer, i_tmilleage integer, i_lastservice date, i_type character varying, i_statenumber character varying)
+CREATE OR REPLACE FUNCTION c_addnewvehicle(i_usrname character varying, i_brand character varying, i_model character varying, i_dmanuf integer, i_tmilleage integer, i_lastservice date, i_type character varying, i_statenumber character varying)
  RETURNS integer
  LANGUAGE plpgsql
 AS $function$
@@ -29,7 +28,12 @@ begin
      v_result = -1;
   end if;
 
-  return v_result;	  
+  return v_result;
+ 
+EXCEPTION 
+  WHEN unique_violation then 
+     return v_result = -1;
+   
 
 END;
 $function$
