@@ -28,6 +28,15 @@ public class AddNewVehicleController {
 	@Autowired
 	DbMethods dbMethods;
 
+	/**
+	 * Description: The method for handling adding new vehicle from client
+	 *
+	 * @param addNewVehicleRequest - request model
+	 * @return AddNewVehicleResponse - 0 - successfully adding, -1 - error or
+	 *         duplicate value
+	 * @throws Exception - general exception
+	 * @since w0.13a1.7d1.5m0.0
+	 */
 	@PostMapping("/add-new-vehicle")
 	public @ResponseBody AddNewVehicleResponse doAddNewVehicle(@RequestBody AddNewVehicleRequest addNewVehicleRequest)
 
