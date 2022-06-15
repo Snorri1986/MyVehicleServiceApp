@@ -67,12 +67,16 @@
             return false;
       	}
       	
+      	saveSubscriberLoginAfterReqistration();
      }
       
      function saveSubscriberLogin() {
     	  sessionStorage.setItem('usrLogin',document.getElementById("loginAuth").value);
      }
-      
+     
+     function saveSubscriberLoginAfterReqistration() {
+    	  sessionStorage.setItem('usrLogin',document.getElementById("loginRegister").value);
+     }
    </script>
    </head>
    <body>
