@@ -66,8 +66,8 @@ text-align: center;
 <body onload="alert('Registration was successful'),setSubscriberLogin()"> 
 <h2 style="text-align: center;">Welcome on Vehicle Registration form!</h2>
 <div class="container text-center">
-    <form method="POST" id="addNewVehicle" action="#" onsubmit="return validateAddVehicleForm()">
-         <div class="form-group row"> <!-- TODO ready to commit task 65 -->
+    <form method="POST" id="addNewVehicle" action="add-new-vehicle" onsubmit="return validateAddVehicleForm()"> <!-- need test attribute action -->
+         <div class="form-group row"> 
             <input type="text" class="form-control" id="labelLogin" name="login">
             <input type="text" class="form-control" id="labelBrand" name="brand" placeholder="Brand">
             <input type="text" class="form-control" id="labelModel" name="model" placeholder="Model">
