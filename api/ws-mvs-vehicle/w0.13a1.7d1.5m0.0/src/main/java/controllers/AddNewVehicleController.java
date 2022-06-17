@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,7 +37,7 @@ public class AddNewVehicleController {
 	 * @since w0.13a1.7d1.5m0.0
 	 */
 	@PostMapping("/add-new-vehicle")
-	public @ResponseBody AddNewVehicleResponse doAddNewVehicle(@RequestBody AddNewVehicleRequest addNewVehicleRequest)
+	public @ResponseBody AddNewVehicleResponse doAddNewVehicle(AddNewVehicleRequest addNewVehicleRequest)
 
 			throws Exception {
 		AddNewVehicleResponse addNewVehicleResponse = null;
