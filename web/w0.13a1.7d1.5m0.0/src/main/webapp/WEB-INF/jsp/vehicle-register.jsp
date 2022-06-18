@@ -54,6 +54,17 @@ function validateAddVehicleForm() {
 	   	 alert("State number can't be blank");  
 	         return false;
 	}
+	
+	/*test code*/
+	alert('login' + login);
+	alert('brand' + brand);
+	alert('model' + model);
+	alert('dateofmanuf' + dateofmanuf);
+	alert('totalMilleage' + totalMilleage);
+	alert('lastservicecheck' + document.getElementById("labelLastServiceCheck").value);
+	alert('vehicleType' + vehicleType);
+	alert('stateNumber' + stateNumber);
+	/**/
 }
 
 </script>
