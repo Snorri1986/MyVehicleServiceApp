@@ -1,5 +1,9 @@
 package controllers;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,10 +49,13 @@ public class AddNewVehicleController {
 
 		logger.info("Incoming add new vehicle request(info): {}", addNewVehicleRequest.toString());
 
+		DateFormat formatter = new SimpleDateFormat("dd.mm.yyyy");
+		Date lsrvcheck = formatter.parse(addNewVehicleRequest.getLastServiceCheck());
+
 		answer = dbMethods.addNewVehicle(addNewVehicleRequest.getLogin(), addNewVehicleRequest.getBrand(),
-				addNewVehicleRequest.getModel(), addNewVehicleRequest.getDateOfManufacturing(),
-				addNewVehicleRequest.getTotalMileage(), addNewVehicleRequest.getLastServiceCheck(),
-				addNewVehicleRequest.getType(), addNewVehicleRequest.getStateNumber());
+				addNewVehicleRequest.getModel(), Integer.parseInt(addNewVehicleRequest.getDateOfManufacturing()),
+				Integer.parseInt(addNewVehicleRequest.getTotalMileage()), lsrvcheck, addNewVehicleRequest.getType(),
+				addNewVehicleRequest.getStateNumber());
 
 		String resultInString = String.valueOf(answer);
 

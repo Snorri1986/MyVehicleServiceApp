@@ -1,8 +1,5 @@
 package models;
 
-import java.util.Date;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -15,9 +12,9 @@ public class AddNewVehicleRequest {
 	private String login;
 	private String brand;
 	private String model;
-	private Integer dateOfManufacturing;
-	private Integer totalMileage;
-	private Date lastServiceCheck;
+	private String dateOfManufacturing;
+	private String totalMileage;
+	private String lastServiceCheck;
 	private String type;
 	private String stateNumber;
 
@@ -25,8 +22,8 @@ public class AddNewVehicleRequest {
 
 	}
 
-	public AddNewVehicleRequest(String login, String brand, String model, Integer dateOfManufacturing,
-			Integer totalMileage, Date lastServiceCheck, String type, String stateNumber) {
+	public AddNewVehicleRequest(String login, String brand, String model, String dateOfManufacturing,
+			String totalMileage, String lastServiceCheck, String type, String stateNumber) {
 		this.login = login;
 		this.brand = brand;
 		this.model = model;
@@ -37,11 +34,13 @@ public class AddNewVehicleRequest {
 		this.stateNumber = stateNumber;
 	}
 
-	/**
+	/*
 	 * Description: login getter
 	 *
 	 * @author Denys Shabelnyk
+	 *
 	 * @return String value of login variable
+	 *
 	 * @since w0.13a1.7d1.5m0.0
 	 */
 	@JsonProperty("login")
@@ -110,11 +109,11 @@ public class AddNewVehicleRequest {
 	 * Description: date of manufacturing of vehicle getter
 	 *
 	 * @author Denys Shabelnyk
-	 * @return Integer value of model variable
+	 * @return String value of model variable
 	 * @since w0.13a1.7d1.5m0.0
 	 */
 	@JsonProperty("dom")
-	public Integer getDateOfManufacturing() {
+	public String getDateOfManufacturing() {
 		return dateOfManufacturing;
 	}
 
@@ -125,7 +124,7 @@ public class AddNewVehicleRequest {
 	 * @param dateOfManufacturing gets from internal JSON request
 	 * @since w0.13a1.7d1.5m0.0
 	 */
-	public void setDateOfManufacturing(Integer dateOfManufacturing) {
+	public void setDateOfManufacturing(String dateOfManufacturing) {
 		this.dateOfManufacturing = dateOfManufacturing;
 	}
 
@@ -133,11 +132,11 @@ public class AddNewVehicleRequest {
 	 * Description: total mileage of vehicle getter
 	 *
 	 * @author Denys Shabelnyk
-	 * @return Integer value of total mileage variable
+	 * @return String value of total mileage variable
 	 * @since w0.13a1.7d1.5m0.0
 	 */
 	@JsonProperty("tmileage")
-	public Integer getTotalMileage() {
+	public String getTotalMileage() {
 		return totalMileage;
 	}
 
@@ -148,7 +147,7 @@ public class AddNewVehicleRequest {
 	 * @param totalMileage gets from internal JSON request
 	 * @since w0.13a1.7d1.5m0.0
 	 */
-	public void setTotalMileage(Integer totalMileage) {
+	public void setTotalMileage(String totalMileage) {
 		this.totalMileage = totalMileage;
 	}
 
@@ -156,12 +155,11 @@ public class AddNewVehicleRequest {
 	 * Description: last service check of vehicle getter
 	 *
 	 * @author Denys Shabelnyk
-	 * @return Date of last service check
+	 * @return String of last service check
 	 * @since w0.13a1.7d1.5m0.0
 	 */
 	@JsonProperty("lsrvcheck")
-	@JsonFormat(pattern = "dd.mm.yyyy") // TODO: need test
-	public Date getLastServiceCheck() {
+	public String getLastServiceCheck() {
 		return lastServiceCheck;
 	}
 
@@ -172,7 +170,7 @@ public class AddNewVehicleRequest {
 	 * @param lastServiceCheck gets from internal JSON request
 	 * @since w0.13a1.7d1.5m0.0
 	 */
-	public void setLastServiceCheck(Date lastServiceCheck) {
+	public void setLastServiceCheck(String lastServiceCheck) {
 		this.lastServiceCheck = lastServiceCheck;
 	}
 
@@ -230,8 +228,9 @@ public class AddNewVehicleRequest {
 	 */
 	@Override
 	public String toString() {
-		return "AddNewVehicleRequest [login=" + login + ", brand=" + brand + ", model=" + model
-				+ ", dateOfManufacturing=" + dateOfManufacturing + ", totalMileage=" + totalMileage
-				+ ", lastServiceCheck=" + lastServiceCheck + ", type=" + type + ", stateNumber=" + stateNumber + "]";
+		return String.format(
+				"AddNewVehicleRequest [login=%s, brand=%s, model=%s, dateOfManufacturing=%s, totalMileage=%s, lastServiceCheck=%s, type=%s, stateNumber=%s]",
+				login, brand, model, dateOfManufacturing, totalMileage, lastServiceCheck, type, stateNumber);
 	}
+
 }
