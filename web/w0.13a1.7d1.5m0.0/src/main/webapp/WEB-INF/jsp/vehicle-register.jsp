@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page session="false"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -76,21 +80,23 @@ text-align: center;
 </head>
 <body onload="alert('Registration was successful'),setSubscriberLogin()"> 
 <h2 style="text-align: center;">Welcome on Vehicle Registration form!</h2>
+
 <div class="container text-center">
-    <form method="POST" id="addNewVehicle" action="add-new-vehicle" onsubmit="return validateAddVehicleForm()"> <!-- need test attribute action -->
+<form method="POST" id="addNewVehicle"  action="add-new-vehicle" onsubmit="return validateAddVehicleForm()"> 
          <div class="form-group row"> 
-            <input type="text" class="form-control" id="labelLogin" name="login">
-            <input type="text" class="form-control" id="labelBrand" name="brand" placeholder="Brand">
-            <input type="text" class="form-control" id="labelModel" name="model" placeholder="Model">
-            <input type="text" class="form-control" id="labelDateOfManufacture" name="dateofmanuf" placeholder="Date of Manufacturing.Example: 2010">
-            <input type="text" class="form-control" id="labelTotalMilleage" name="totalmilleage" placeholder="TotalMilleage.Example: 95600">
-            <input type="text" class="form-control" id="labelLastServiceCheck" name="lastSrvCheck" placeholder="LastServiceCheck.Example: 18.03.2022">
-            <input type="text" class="form-control" id="labelType" name="vehicleType" placeholder="Example: Car Boat Bicycle Motobycicle Bus Truck">
-            <input type="text" class="form-control" id="labelStateNumber" name="vehicleStateNumber" placeholder="State number">
+            <input type="text" class="form-control" id="labelLogin"/>
+            <input type="text"  class="form-control" id="labelBrand" placeholder="Brand"/>
+            <input type="text"   class="form-control" id="labelModel" placeholder="Model"/>
+            <input type="text"   class="form-control" id="labelDateOfManufacture" placeholder="Date of Manufacturing.Example: 2010"/>
+            <input type="text"  class="form-control" id="labelTotalMilleage"  placeholder="TotalMilleage.Example: 95600"/>
+            <input type="text"  class="form-control" id="labelLastServiceCheck"  placeholder="LastServiceCheck.Example: 18.03.2022"/>
+            <input type="text"  class="form-control" id="labelType"  placeholder="Example: Car Boat Bicycle Motobycicle Bus Truck"/>
+            <input type="text"  class="form-control" id="labelStateNumber"  placeholder="State number"/>
         </div>
         <button type="submit" class="btn btn-large btn-info">Add new vehicle</button>
-   </form>
- </div>
+</form>
+</div>
+
 <div class = "btn-group">
    <a class="btn btn-large btn-info mr-1" href="../main">Back to main page</a>
 </div>

@@ -1,4 +1,3 @@
-// new code
 package snorri1986.main;
 
 import org.springframework.http.ResponseEntity;
@@ -50,4 +49,3 @@ public class AddNewVehicleController {
 	}
 
 }
-// ... /
