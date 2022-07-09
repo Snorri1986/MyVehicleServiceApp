@@ -9,6 +9,12 @@ import javax.persistence.StoredProcedureQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import models.AddNewVehicleResponse;
+
 /**
  * Description: The repository class
  *
@@ -35,10 +41,15 @@ public class DbMethods {
 	 * @param type                - type of a vehicle
 	 * @param statenumber         - state number of a vehicle
 	 * @return Integer - result code. 0 - success, -1 - fail
+	 * @throws JsonProcessingException
+	 * @throws JsonMappingException
 	 */
-	public Integer addNewVehicle(String login, String brand, String model, Integer yearofmanufacturing,
-			Integer totalmileage, Date lastservicedate, String type, String statenumber) {
+	public AddNewVehicleResponse addNewVehicle(String login, String brand, String model, Integer yearofmanufacturing,
+			Integer totalmileage, Date lastservicedate, String type, String statenumber)
+			throws JsonMappingException, JsonProcessingException {
 		Integer answerCode = 0;
+
+		AddNewVehicleResponse addNewVehicleResponse = null;
 
 		StoredProcedureQuery query = entityManager.createStoredProcedureQuery("park.c_addnewvehicle")
 				.registerStoredProcedureParameter("i_usrname", String.class, ParameterMode.IN)
@@ -60,7 +71,12 @@ public class DbMethods {
 
 		query.execute();
 		answerCode = (Integer) query.getOutputParameterValue("v_result");
-		return answerCode;
+
+		ObjectMapper regResult = new ObjectMapper();
+		addNewVehicleResponse = regResult.readValue(String.valueOf(answerCode), AddNewVehicleResponse.class);
+
+		return addNewVehicleResponse;
+
 	}
 
 }

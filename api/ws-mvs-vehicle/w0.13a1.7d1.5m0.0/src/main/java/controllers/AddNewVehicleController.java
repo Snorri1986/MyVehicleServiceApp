@@ -8,10 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import models.AddNewVehicleRequest;
 import models.AddNewVehicleResponse;
@@ -41,35 +40,23 @@ public class AddNewVehicleController {
 	 * @since w0.13a1.7d1.5m0.0
 	 */
 	@PostMapping("/add-new-vehicle")
-	public @ResponseBody AddNewVehicleResponse doAddNewVehicle(AddNewVehicleRequest addNewVehicleRequest)
-
+	public @ResponseBody AddNewVehicleResponse doAddNewVehicle(@RequestBody AddNewVehicleRequest addNewVehicleRequest)
 			throws Exception {
 		AddNewVehicleResponse addNewVehicleResponse = null;
-		Integer answer;
 
 		logger.info("Incoming add new vehicle request(info): {}", addNewVehicleRequest.toString());
 
 		DateFormat formatter = new SimpleDateFormat("dd.mm.yyyy");
 		Date lsrvcheck = formatter.parse(addNewVehicleRequest.getLastServiceCheck());
 
-		answer = dbMethods.addNewVehicle(addNewVehicleRequest.getLogin(), addNewVehicleRequest.getBrand(),
-				addNewVehicleRequest.getModel(), Integer.parseInt(addNewVehicleRequest.getDateOfManufacturing()),
+		addNewVehicleResponse = dbMethods.addNewVehicle(addNewVehicleRequest.getLogin(),
+				addNewVehicleRequest.getBrand(), addNewVehicleRequest.getModel(),
+				Integer.parseInt(addNewVehicleRequest.getDateOfManufacturing()),
 				Integer.parseInt(addNewVehicleRequest.getTotalMileage()), lsrvcheck, addNewVehicleRequest.getType(),
 				addNewVehicleRequest.getStateNumber());
 
-		String resultInString = String.valueOf(answer);
-
-		if (resultInString == "null") {
-			addNewVehicleResponse = new AddNewVehicleResponse(-1);
-			logger.info("Add new vehicle response (info): {}", addNewVehicleResponse.toString());
-			return addNewVehicleResponse;
-		} else {
-			ObjectMapper regResult = new ObjectMapper();
-			addNewVehicleResponse = regResult.readValue(resultInString, AddNewVehicleResponse.class);
-			logger.info("Add new vehicle response (info): {}", addNewVehicleResponse.toString());
-		}
-
 		return addNewVehicleResponse;
+
 	}
 
 }
